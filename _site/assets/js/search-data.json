@@ -2,109 +2,109 @@
     "doc": "ARM Cross-Compilation on Debian x86 Machine",
     "title": "Quick-wiki: ARM Cross-Compilation on Debian x86 Machine",
     "content": ". The latest versions of DebianDebian has excellent support for cross-building through Debian Cross-toolchains ( see wiki: https://wiki.debian.org/ToolChain/Cross ). Toolchains are set of software development tools and libraries (such as gcc , gdb , glibc ) that are chained together to enable you to build executable code on one operating system on one type of machine, such as a 64-bit Linux OS on an Intel x86 machine, but to execute them on a different operating system and/or a different architecture, such as a 32-bit Linux OS on an ARM device. Debian cross toolchain is a good starting point. We can list the available toolchains as follows: . prashanth@krv:~$ apt-cache search cross-build-essential crossbuild-essential-amd64 - Informational list of cross-build-essential packages crossbuild-essential-arm64 - Informational list of cross-build-essential packages crossbuild-essential-armel - Informational list of cross-build-essential packages crossbuild-essential-armhf - Informational list of cross-build-essential packages crossbuild-essential-i386 - Informational list of cross-build-essential packages crossbuild-essential-powerpc - Informational list of cross-build-essential packages crossbuild-essential-ppc64el - Informational list of cross-build-essential packages crossbuild-essential-s390x - Informational list of cross-build-essential packages crossbuild-essential-mips - Informational list of cross-build-essential packages crossbuild-essential-mips64 - Informational list of cross-build-essential packages crossbuild-essential-mips64el - Informational list of cross-build-essential packages crossbuild-essential-mips64r6 - Informational list of cross-build-essential packages crossbuild-essential-mips64r6el - Informational list of cross-build-essential packages crossbuild-essential-mipsel - Informational list of cross-build-essential packages crossbuild-essential-mipsr6 - Informational list of cross-build-essential packages crossbuild-essential-mipsr6el - Informational list of cross-build-essential packages . The main purpose of these packages is to allow cross-compiling of Linux programs for different architecture distributions, but these can be used also for bare metal programming. One thing to be aware is the fact that the compiler by default tries to link the Linux standard C libraries that in bare metal programming have no use. Here, I’m using ARM hard float ( armhf ) package for writing programs that is deployed to the Beagle boards. prashanth@krv:~$ sudo apt install crossbuild-essential-armhf Preparing to unpack .../crossbuild-essential-armhf_12.9_all.deb ... Unpacking crossbuild-essential-armhf (12.9) ... Setting up crossbuild-essential-armhf (12.9) ... Test installation by calling the compiler directly. prashanth@krv:~$ arm-linux-gnueabihf-g++ -v COLLECT_GCC=arm-linux-gnueabihf-g++ Thread model: posix gcc version 10.2.1 20210110 (Debian 10.2.1-6) . I’m writing a short C++ program, testcross.cpp , which can be compiled into binary code using the cross-compiler. prashanth@krv:~$ gedit testcross.cpp prashanth@krv:~$ more testcross.cpp #include&lt;iostream&gt; using namespace std; int main(){ cout &lt;&lt; \"Testing cross compilation for armhf\" &lt;&lt; endl; return 0; } prashanth@krv:~$ arm-linux-gnueabihf-g++ testcross.cpp -o testcross prashanth@krv:~$ ls -l testcross* -rwxr-xr-x 1 prashanth prashanth 9064 Apr 5 13:02 testcross -rw-r--r-- 1 prashanth prashanth 119 Apr 5 13:00 testcross.cpp . The binary file has an executable flag, but when the binary is invoked, it fails to execute. This is unsurprising, as we are attempting to execute ARM binary instructions on an Intel x86 machine. prashanth@krv:~$ ./testcross arm-binfmt-P: Could not open '/lib/ld-linux-armhf.so.3': No such file or directory . This error indicates that the ld-linux-armhf.so.3 file is not in the system library directory. A search of the filesystem locates it in the /usr/arm-linux-gnueabihf/lib/ directory. prashanth@krv:~$ stat /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 File: /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 -&gt; ld-2.31.so Size: 10 Blocks: 0 IO Block: 4096 symbolic link Device: b302h/45826d Inode: 1447823 Links: 1 Access: (0777/lrwxrwxrwx) Uid: ( 0/ root) Gid: ( 0/ root) Access: 2022-04-05 13:02:21.727259593 +0530 Modify: 2021-03-03 17:24:20.000000000 +0530 Change: 2022-03-29 20:49:01.659052574 +0530 Birth: 2022-03-29 20:49:01.631052872 +0530 . One approach to solve this issue is to explicitly call the QEMU tool and specify the library directory, whereupon the program is emulated correctly. prashanth@krv:~$ qemu-arm-static -L /usr/arm-linux-gnueabihf/ testcross Testing cross compilation for armhf . Success! If we see this output, then we are able to build a binary on the x86 machine that can be executed directly on the ARM machine. ",
-    "url": "http://localhost:4000/just-the-docs/docs/documentation/ARM%20Cross-Compilation%20on%20Debian%20x86%20Machine/#quick-wiki-arm-cross-compilation-on-debian-x86-machine",
+    "url": "http://localhost:4000/docs/documentation/ARM%20Cross-Compilation%20on%20Debian%20x86%20Machine/#quick-wiki-arm-cross-compilation-on-debian-x86-machine",
     "relUrl": "/docs/documentation/ARM%20Cross-Compilation%20on%20Debian%20x86%20Machine/#quick-wiki-arm-cross-compilation-on-debian-x86-machine"
   },"1": {
     "doc": "ARM Cross-Compilation on Debian x86 Machine",
     "title": "ARM Cross-Compilation on Debian x86 Machine",
     "content": ". ",
-    "url": "http://localhost:4000/just-the-docs/docs/documentation/ARM%20Cross-Compilation%20on%20Debian%20x86%20Machine/",
+    "url": "http://localhost:4000/docs/documentation/ARM%20Cross-Compilation%20on%20Debian%20x86%20Machine/",
     "relUrl": "/docs/documentation/ARM%20Cross-Compilation%20on%20Debian%20x86%20Machine/"
   },"2": {
     "doc": "Community Bonding Period",
     "title": "Community Bonding Period",
     "content": ". | GSoC Proposal accepted! | Community Bonding Period begined, a video conference was held with BeagleBoard Community members, mentors and accepted students of GSoC’22. | Created this project web page. | Read the Building Beagle-based embedded linux systems. | Started reading about U-Boot, Debootstrap and study how to use it. | Reached out to mentors regarding the following: . | How often we should have meeting for the project progress and doubts. | And, also to schedule a meet with Bela community as well as I really wanna know a lot, and to trully understand the motive behind the Bela platform. | . | Attended GSoC 2022 Contributor Summit. | . ",
-    "url": "http://localhost:4000/just-the-docs/docs/weeklyprogress/Community%20Bonding%20Period/#community-bonding-period",
+    "url": "http://localhost:4000/docs/weeklyprogress/Community%20Bonding%20Period/#community-bonding-period",
     "relUrl": "/docs/weeklyprogress/Community%20Bonding%20Period/#community-bonding-period"
   },"3": {
     "doc": "Community Bonding Period",
     "title": "Community Bonding Period",
     "content": ". ",
-    "url": "http://localhost:4000/just-the-docs/docs/weeklyprogress/Community%20Bonding%20Period/",
+    "url": "http://localhost:4000/docs/weeklyprogress/Community%20Bonding%20Period/",
     "relUrl": "/docs/weeklyprogress/Community%20Bonding%20Period/"
   },"4": {
     "doc": "Pre Selection",
     "title": "Pre Selection",
     "content": ". | I came across the BeagleBoard project for this year’s Google Summer of Code and found the project titled Building Bela Images quite interesting to me and i checked BeagleBoard/GSoC/Ideas-2022 wiki to find are there any initial application tasks to do anything related to Building Bela Image and asked in beagleboard-gsoc slack channel to provide me with some small tasks related to the project to do. | Got in touch with Giulio Moro and Dhruva Gole, started looking at Bela Platform projects and tried to understand the sprit behind these debian based distributions (bela, beagleboard images) and listed out features, somehow got familiar with code base. | Setuped build environment on my machine to rebuild bela, beagleboard images and I tried some ways to boot Images using QEMU emulator and that didn’t worked out as I don’t have hardware to test the image. | I acquainted myself with BeagleBoard.org and Bela.io and what products and services they both offer. | Drafted my proposal and asked for suggestion and feedback from Guiliomoro and Dhruva Goel. | After, feedback I updated my proposal with necessary corrections and necessary topics to work on as mentioned and submitted proposal on GSoC website. | . ",
-    "url": "http://localhost:4000/just-the-docs/docs/weeklyprogress/Pre%20Selection/#pre-selection",
+    "url": "http://localhost:4000/docs/weeklyprogress/Pre%20Selection/#pre-selection",
     "relUrl": "/docs/weeklyprogress/Pre%20Selection/#pre-selection"
   },"5": {
     "doc": "Pre Selection",
     "title": "Pre Selection",
     "content": ". ",
-    "url": "http://localhost:4000/just-the-docs/docs/weeklyprogress/Pre%20Selection/",
+    "url": "http://localhost:4000/docs/weeklyprogress/Pre%20Selection/",
     "relUrl": "/docs/weeklyprogress/Pre%20Selection/"
   },"6": {
     "doc": "Weekly Progress",
     "title": "Weekly Progress",
     "content": "These are the logs of my project, where I provide weekly updates on the work done. ",
-    "url": "http://localhost:4000/just-the-docs/docs/weeklyprogress/",
+    "url": "http://localhost:4000/docs/weeklyprogress/",
     "relUrl": "/docs/weeklyprogress/"
   },"7": {
     "doc": "Documentation",
     "title": "Documentation",
     "content": "My day to day ramblings, learnings and research in building embedded Linux systems . ",
-    "url": "http://localhost:4000/just-the-docs/docs/documentation/",
+    "url": "http://localhost:4000/docs/documentation/",
     "relUrl": "/docs/documentation/"
   },"8": {
     "doc": "Blog",
     "title": "Blog | Google Summer of Code 2022",
     "content": "My Journey with Bela &amp; BeagleBoard . ",
-    "url": "http://localhost:4000/just-the-docs/docs/blog/#blog--google-summer-of-code-2022",
+    "url": "http://localhost:4000/docs/blog/#blog--google-summer-of-code-2022",
     "relUrl": "/docs/blog/#blog--google-summer-of-code-2022"
   },"9": {
     "doc": "Blog",
     "title": "Blog",
     "content": " ",
-    "url": "http://localhost:4000/just-the-docs/docs/blog/",
+    "url": "http://localhost:4000/docs/blog/",
     "relUrl": "/docs/blog/"
   },"10": {
     "doc": "Home",
     "title": "GSoC’22 - Building Bela Images",
     "content": ". The project idea is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo. ",
-    "url": "http://localhost:4000/just-the-docs/#gsoc22---building-bela-images",
+    "url": "http://localhost:4000/#gsoc22---building-bela-images",
     "relUrl": "/#gsoc22---building-bela-images"
   },"11": {
     "doc": "Home",
     "title": "About",
     "content": ". | Student Name: Kurva Prashanth | Mentors: Giulio Moro, Vedant Paranjape, Vaishnav Achath | GSoC Entry link: GSoC entry | Wiki: BB.org forum building-bela-images | Blog Link: Building Bela Images | . ",
-    "url": "http://localhost:4000/just-the-docs/#about",
+    "url": "http://localhost:4000/#about",
     "relUrl": "/#about"
   },"12": {
     "doc": "Home",
     "title": "Table of Contents",
     "content": ". | Introduction | Implementation Details . | Background | . | Benefit | References | . ",
-    "url": "http://localhost:4000/just-the-docs/#table-of-contents",
+    "url": "http://localhost:4000/#table-of-contents",
     "relUrl": "/#table-of-contents"
   },"13": {
     "doc": "Home",
     "title": "Introduction ",
     "content": "As given in the official website, Bela is a hardware and software platform for creating beautiful interaction with sensors, sound and it is designed for artists, musicians, researchers and makers, Bela brings the power of ultra-low latency interactive audio and sensors to digital systems. Bela Platform uses the Bela software which is a customised Debian distribution including a custom xenomai kernel, minimal clutter, and custom systemd configurations and It takes advantage of features of the BeagleBone computers and can achieve extremely fast audio and sensor processing times. ",
-    "url": "http://localhost:4000/just-the-docs/#introduction-",
+    "url": "http://localhost:4000/#introduction-",
     "relUrl": "/#introduction-"
   },"14": {
     "doc": "Home",
     "title": "Implementation Details ",
     "content": "In order to add the Bela Image builder features to BeagleBoard Image builder. Firstly, I try building Bela Image by using BeagleBoard Image builder scripts and making necessary changes in scripts to build Image. After this we will be getting a clear idea to where to change and semantic rebase the features of Bela Image builder to BeagleBoard Image builder one. Here are typical changes need to do in BeagleBoard Image builder repo . | Bela-specific changes will be made conditional in RootStock-NG.sh script in BeagleBoard Image builder repo . | Add Bela Image builder scripts features in RootStock-NG.sh script . | bootloader, kernel, xenomai, downloads, emmc-flasher-chroot and pre-chroot | . | . | Use config template and create bela-image.conf file and also add bela required packages list to it | Make necessary changes in build scripts to Optimise boot times as Bela Image has fast boot time campared to BeagleBoard Image | After building Bela Image using Beagleboard Image builder functionalities make changes to the Image-builder repo | . Background . Bela Image development repo is heavily based and which was initially inspired by Beagleboard Image-builder scripts. Currently, the Beagle board Image development repo diverged greatly from a common functionalities of building Images. There is a requirement to “rebase” the functionalities of the Bela Image builder repo to the Beagleboard Image builder one. As the two codebases are drastically different we need to understand and “semantic rebase” the features of the Bela Image builder repo (xenomai kernel building scripts along with a bunch of other stuff) to Beagleboard Image builder repo. After these changes the Bela Image development will follow more closely with the Beagleboard Image development and as a result Bela Image will be updated more often and it minimizes future development effort. ",
-    "url": "http://localhost:4000/just-the-docs/#implementation-details-",
+    "url": "http://localhost:4000/#implementation-details-",
     "relUrl": "/#implementation-details-"
   },"15": {
     "doc": "Home",
     "title": "Benefit ",
     "content": "This project adds support for the Bela Image development to make Bela Image follow more closely with BeagleBoard Images. I mean after Bela specific changes made conditional to the Image-builder repository. The Bela Image development will be updated more often, more easily in parallel with BeagleBoard Images. ",
-    "url": "http://localhost:4000/just-the-docs/#benefit-",
+    "url": "http://localhost:4000/#benefit-",
     "relUrl": "/#benefit-"
   },"16": {
     "doc": "Home",
     "title": "References ",
     "content": ". | Original GSoC Project idea | https://github.com/BelaPlatform | https://github.com/RobertCNelson/Bootloader-Builder | https://github.com/RobertCNelson/omap-image-builder | http://www.denx.de/wiki/U-Boot | . ",
-    "url": "http://localhost:4000/just-the-docs/#references-",
+    "url": "http://localhost:4000/#references-",
     "relUrl": "/#references-"
   },"17": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
-    "url": "http://localhost:4000/just-the-docs/",
+    "url": "http://localhost:4000/",
     "relUrl": "/"
   }
 }
