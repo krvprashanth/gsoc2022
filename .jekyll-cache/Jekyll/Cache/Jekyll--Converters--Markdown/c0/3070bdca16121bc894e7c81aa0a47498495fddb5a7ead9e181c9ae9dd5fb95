@@ -1,6 +1,7 @@
-I"<h1 id="yay-im-in-gsoc-2022">Yay! I’m In GSoC 2022</h1>
+I"<h1 id="gsoc2022--beagleboardorg"><strong>GSoC’2022 | BeagleBoard.org</strong></h1>
 <hr />
-<p>Hello people! I am Kurva Prashant, a third-year undergraduate student of the Vidya Jyothi Institute of Technology, Hyderabad, India. I am glad to share that I have been accepted for Google Summer of Code 2022 at BeagleBoard.org and I am really excited to spend this summer well contributing to FOSS and working on the project <a href="https://summerofcode.withgoogle.com/programs/2022/projects/ykkMkxcR"><strong>“Building Bela Image”</strong></a>. This web page describes my journey with Bela, BeagleBoard and the project which I contributing for in Google Summer of Code.</p>
+
+<p>Hello people! I am Kurva Prashant, a third-year undergraduate student of the Vidya Jyothi Institute of Technology, Hyderabad, India. I am glad to share that I have been accepted for Google Summer of Code 2022 at BeagleBoard.org and I am really excited to spend this summer well contributing to FOSS and working on the project <a href="https://summerofcode.withgoogle.com/programs/2022/projects/ykkMkxcR">“Building Bela Images”</a>. This web page describes my journey with Bela, BeagleBoard and the project which I contributing for in Google Summer of Code 2022.</p>
 
 <p><img src="assets/images/photo6100226193669337986.jpg" alt="intro" /></p>
 
@@ -13,7 +14,7 @@
 </ul>
 
 <h2 id="my-introduction-to-gnulinux"><strong>My Introduction to GNU/Linux</strong></h2>
-
+<hr />
 <p>I was Introduced to the world of GNU/Linux in 2019 when I was started learning Robotics and Visual Navigation on low end machine which running “slow” due to the bloatware of windows in it. And, I stopped using the windows, removed it and started using Debian with XFCE desktop environment till then.</p>
 
 <h2 id="my-introduction-to-open-hardware--embedded-linux"><strong>My Introduction to Open Hardware &amp; Embedded Linux</strong></h2>
@@ -21,10 +22,10 @@
 <p>I got to know about Open Hardware and Embedded Linux while learning electronics and embedded systems part of robotics. I didn’t pay much attention to it at that time and quickly moved on. After this a short talk on <a href="https://youtu.be/3Y_hqQZEkvY">Liberating SBC’s using Debian by Yuvraj</a> at MiniDebConf India 2021 which focused on Open Source Hardware like <a href="https://www.olimex.com/">Olimex</a> and the Debian distributions for arm based single board computers has intrigued me to start working on Open Hardware and Embedded Linux.</p>
 <h2 id="past-experience-with-debian"><strong>Past Experience with Debian</strong></h2>
 <hr />
-<p>I have an experience with Debian live build system and customized my low end machine with robotics and networking packages in which it has 2GB RAM and 30GB hard disk installed Debian 11 “Bullseye” with XFCE Desktop environment on it and I’m just curious to work on low end hardware, optimise software to make run very well on resource constrained devices and also porting and Enabled the Government School Computer labs in our locality to specific use of free softwares and Installing BalaSwecha OS ( A GNU/Linux distribution based on Debian ).</p>
+<p>I have an experience with Debian live build system and customized my low end machine with robotics and networking packages in which it installed Debian 11 “Bullseye” with XFCE Desktop environment on it and I’m just curious to work on low end hardware, optimise software to make run very well on resource constrained devices and also porting and enabled the Government School Computer labs in our locality to specific use of free softwares and Installing BalaSwecha OS ( A GNU/Linux distribution based on Debian ).</p>
 <h2 id="applying-for-google-summer-of-code"><strong>Applying for Google Summer of Code</strong></h2>
 <hr />
-<p>I knew about GSoC through Swecha, a vibrant community of software users, students, academicians and software developers who determined to provide quality software built on the guidelines of free software development model. I decided to apply this year after some searching I came across the BeagleBoard project Ideas wiki for GSoC 2022 and found the project title “Building Bela Images” quite interesting to me and submitted a proposal about it. Since, I was working on Single Board Computers and linux distributions, I had the necessary experience to make this possible.</p>
+<p>I came to know  GSoC through Swecha, a vibrant community of software users, students, academicians and software developers who determined to provide quality software built on the guidelines of free software development model. I decided to apply this year after some searching I came across the BeagleBoard project Ideas wiki for GSoC 2022 and found the project title “Building Bela Images” quite interesting to me and submitted a proposal about it. Since, I was working on Single Board Computers and linux distributions, I had the necessary experience to make this possible.</p>
 
 <p>Now, I will cover some information about my GSoC Project.</p>
 <h2 id="my-gsoc-project"><strong>My GSoC Project</strong></h2>

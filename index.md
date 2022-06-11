@@ -3,9 +3,11 @@ layout: default
 title: Home
 nav_order: 1
 ---
-# **Yay! I'm In GSoC 2022**
+# **GSoC'2022 | BeagleBoard.org**
+## **Building Bela Images**
 ---
-Hello people! I am Kurva Prashant, a third-year undergraduate student of the Vidya Jyothi Institute of Technology, Hyderabad, India. I am glad to share that I have been accepted for Google Summer of Code 2022 at BeagleBoard.org and I am really excited to spend this summer well contributing to FOSS and working on the project [**"Building Bela Image"**](https://summerofcode.withgoogle.com/programs/2022/projects/ykkMkxcR). This web page describes my journey with Bela, BeagleBoard and the project which I contributing for in Google Summer of Code.
+
+Hello people! I am Kurva Prashant, a third-year undergraduate student of the Vidya Jyothi Institute of Technology, Hyderabad, India. I am glad to share that I have been accepted for Google Summer of Code 2022 at BeagleBoard.org and I am really excited to spend this summer well contributing to FOSS and working on the project ["Building Bela Images"](https://summerofcode.withgoogle.com/programs/2022/projects/ykkMkxcR). This web page describes my journey with Bela, BeagleBoard and the project which I contributing for in Google Summer of Code 2022.
 
 ![intro](assets/images/photo6100226193669337986.jpg)
 
@@ -24,10 +26,10 @@ I was Introduced to the world of GNU/Linux in 2019 when I was started learning R
 I got to know about Open Hardware and Embedded Linux while learning electronics and embedded systems part of robotics. I didn't pay much attention to it at that time and quickly moved on. After this a short talk on [Liberating SBC's using Debian by Yuvraj](https://youtu.be/3Y_hqQZEkvY) at MiniDebConf India 2021 which focused on Open Source Hardware like [Olimex](https://www.olimex.com/) and the Debian distributions for arm based single board computers has intrigued me to start working on Open Hardware and Embedded Linux.
 ## **Past Experience with Debian**
 ---
-I have an experience with Debian live build system and customized my low end machine with robotics and networking packages in which it installed Debian 11 "Bullseye" with XFCE Desktop environment on it and I'm just curious to work on low end hardware, optimise software to make run very well on resource constrained devices and also porting and Enabled the Government School Computer labs in our locality to specific use of free softwares and Installing BalaSwecha OS ( A GNU/Linux distribution based on Debian ).
+I have an experience with Debian live build system and customized my low end machine with robotics and networking packages in which it installed Debian 11 "Bullseye" with XFCE Desktop environment on it and I'm just curious to work on low end hardware, optimise software to make run very well on resource constrained devices and also porting and enabled the Government School Computer labs in our locality to specific use of free softwares and Installing BalaSwecha OS ( A GNU/Linux distribution based on Debian ).
 ## **Applying for Google Summer of Code**
 ---
-I knew about GSoC through Swecha, a vibrant community of software users, students, academicians and software developers who determined to provide quality software built on the guidelines of free software development model. I decided to apply this year after some searching I came across the BeagleBoard project Ideas wiki for GSoC 2022 and found the project title "Building Bela Images" quite interesting to me and submitted a proposal about it. Since, I was working on Single Board Computers and linux distributions, I had the necessary experience to make this possible.
+I came to know  GSoC through Swecha, a vibrant community of software users, students, academicians and software developers who determined to provide quality software built on the guidelines of free software development model. I decided to apply this year after some searching I came across the BeagleBoard project Ideas wiki for GSoC 2022 and found the project title "Building Bela Images" quite interesting to me and submitted a proposal about it. Since, I was working on Single Board Computers and linux distributions, I had the necessary experience to make this possible.
 
 Now, I will cover some information about my GSoC Project.
 ## **My GSoC Project**
