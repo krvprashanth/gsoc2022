@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 # **GSoC'2022 | BeagleBoard.org**
-## **Building Bela Images**
+## Building Bela Images
 ---
 
 Hello people! I am Kurva Prashant, a third-year undergraduate student of the Vidya Jyothi Institute of Technology, Hyderabad, India. I am glad to share that I have been accepted for Google Summer of Code 2022 at BeagleBoard.org and I am really excited to spend this summer well contributing to FOSS and working on the project ["Building Bela Images"](https://summerofcode.withgoogle.com/programs/2022/projects/ykkMkxcR). This web page describes my journey with Bela, BeagleBoard and the project which I contributing for in Google Summer of Code 2022.
