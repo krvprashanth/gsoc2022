@@ -1,0 +1,26 @@
+I"6<hr />
+<h1 id="week-1">Week 1</h1>
+<p>June 13 - June 19
+—</p>
+<ul>
+  <li>Bela Cape has shipped from London. (13 June)</li>
+  <li>Had #1 weekly meet with mentors Giulio Moro, Vedant Paranjape, and Vaishnav Achath regarding project progress and doubts.</li>
+  <li>Minutes Of Meeting Monday, 13 June, 4pm CEST ( 7:30 IST ):
+    <ul>
+      <li>I summarised my learnings from bela build process as it is slow when i tried to reproduce and required a lot of network bandwidth and took the longest after the first run, does all downloads, including the kernal.</li>
+      <li>@Giulio Moro suggested to use sudo ./build_bela.sh –no-kernel –no-bootloader –no-build-xenomai –no-downloads In case need to re-run the build process as it saves time a lot.</li>
+      <li>And addressed some general questions from my side regarding what mentors expecting to be done in the project by first phase of coding period ends and rescheduling my timeline as I have my semester final exams from June 27 to July 6 (approax for two weeks).</li>
+    </ul>
+  </li>
+  <li>BeagleBone Black arrived today evening. (15 June)
+    <ul>
+      <li>Flashed Debian console Image via microSD card (without flashing the eMMC)</li>
+    </ul>
+  </li>
+  <li>A video conference was held to introduce ourselves and meet this year’s students! and Jason Kridner addressed on what Beagle cares about, contributing upstream, Asking smart questions, issue submissions on blockers, weekly status reports and growing connections within and beyong the BeagleBoard.org community. Here is a meeting recording <a href="https://youtu.be/8FW5SziGzD4">click here</a>. (15 June, 10pm IST)</li>
+  <li>Worked on to understand the workflows of both bela-image-builder and BeagleBoard Image builder repos by rebuilding bela, beagleboard Images and spent most hours on resolving build issues, and downloading code to my build machine.</li>
+  <li>Giulio Moro pushed a couple of updates to bela-image-builder that allowed to reproduce image with out any issues.</li>
+  <li>Went through the proposal to revise the workflow and made few changes.</li>
+</ul>
+
+:ET

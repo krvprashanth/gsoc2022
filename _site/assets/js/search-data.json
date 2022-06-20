@@ -13,7 +13,7 @@
   },"2": {
     "doc": "Community Bonding Period",
     "title": "Community Bonding Period",
-    "content": "May 20 - June 12 . | GSoC 2022 accepted Contributors announced! | My GSoC proposal Building Bela Images accepted. | Community Bonding Period begined, a video conference was held with BeagleBoard Community members, mentors and accepted students of GSoC’22. | Created this project web page. | Read the Building Beagle-based embedded linux systems. | Started reading about U-Boot, Debootstrap and study how to use it. | Reached out to mentors regarding the following: . | How often we should have meeting for the project progress and doubts. | And, also to schedule a meet with Bela community as well as I really wanna know a lot, and to trully understand the motive behind the Bela platform. | . | Attended GSoC 2022 Contributor Summit. | Last community bonding meet was in BeagleBoard slack channel. | . ",
+    "content": "May 20 - June 12 . | GSoC 2022 accepted Contributors announced! | My GSoC proposal Building Bela Images accepted. | Sent shipping address details to the org and mentor. | Community Bonding Period begined, a video conference was held with BeagleBoard Community members, mentors and accepted students of GSoC’22. | Created this project web page. | Read the Building Beagle-based embedded linux systems. | Started reading about U-Boot, Debootstrap and study how to use it. | I have to read and write bash scripts during the project. Read these books/guides to Improve bash/command-line skills. | https://linuxcommand.org/tlcl.php | https://www.gnu.org/software/bash/manual/bash.pdf | https://en.wikibooks.org/wiki/Bash_Shell_Scripting | . | Attended GSoC 2022 Contributor Summit. | Reached out to mentors regarding the following: . | How often we should have meeting for the project progress and doubts. | And, also to schedule a meet with Bela community as well as I really wanna know a lot, and to trully understand the motive behind the Bela platform. | Scheduled a calender Invite for rugular weekly meeting with mentors. | . | Last community bonding meet was in BeagleBoard slack channel. | Created an account in BeagleBoard gitlab Instance https://git.beagleboard.org and a project repo up here for issue tracking of the blockers while building Images. | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/Community%20Bonding%20Period/#community-bonding-period",
     "relUrl": "/docs/weeklyprogress/Community%20Bonding%20Period/#community-bonding-period"
   },"3": {
@@ -115,7 +115,7 @@
   },"19": {
     "doc": "Week 1",
     "title": "Week 1",
-    "content": "June 13 - June 19 . ",
+    "content": "June 13 - June 19 . | Bela Cape has shipped from London. (13 June) | Had #1 weekly meet with mentors Giulio Moro, Vedant Paranjape, and Vaishnav Achath regarding project progress and doubts. | Minutes Of Meeting Monday, 13 June, 4pm CEST ( 7:30 IST ): . | I summarised my learnings from bela build process as it is slow when i tried to reproduce and required a lot of network bandwidth and took the longest after the first run, does all downloads, including the kernal. | @Giulio Moro suggested to use sudo ./build_bela.sh –no-kernel –no-bootloader –no-build-xenomai –no-downloads In case need to re-run the build process as it saves time a lot. | And addressed some general questions from my side regarding what mentors expecting to be done in the project by first phase of coding period ends and rescheduling my timeline as I have my semester final exams from June 27 to July 6 (approax for two weeks). | . | BeagleBone Black arrived today evening. (15 June) . | Flashed Debian console Image via microSD card (without flashing the eMMC) | . | A video conference was held to introduce ourselves and meet this year’s students! and Jason Kridner addressed on what Beagle cares about, contributing upstream, Asking smart questions, issue submissions on blockers, weekly status reports and growing connections within and beyong the BeagleBoard.org community. Here is a meeting recording click here. (15 June, 10pm IST) | Worked on to understand the workflows of both bela-image-builder and BeagleBoard Image builder repos by rebuilding bela, beagleboard Images and spent most hours on resolving build issues, and downloading code to my build machine. | Giulio Moro pushed a couple of updates to bela-image-builder that allowed to reproduce image with out any issues. | Went through the proposal to revise the workflow and made few changes. | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week1/#week-1",
     "relUrl": "/docs/weeklyprogress/week1/#week-1"
   },"20": {
@@ -124,5 +124,17 @@
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week1/",
     "relUrl": "/docs/weeklyprogress/week1/"
+  },"21": {
+    "doc": "Week 2",
+    "title": "Week 2",
+    "content": "June 20 - June 26 . ",
+    "url": "http://localhost:4000/docs/weeklyprogress/week2/#week-2",
+    "relUrl": "/docs/weeklyprogress/week2/#week-2"
+  },"22": {
+    "doc": "Week 2",
+    "title": "Week 2",
+    "content": ". ",
+    "url": "http://localhost:4000/docs/weeklyprogress/week2/",
+    "relUrl": "/docs/weeklyprogress/week2/"
   }
 }
