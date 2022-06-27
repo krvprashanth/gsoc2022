@@ -1,0 +1,16 @@
+I"�<hr />
+<h1 id="week-2">Week 2</h1>
+<p>June 20 - June 26</p>
+
+<hr />
+<ul>
+  <li>Received Bela Cape</li>
+  <li>Attended #2 weekly meeting with mentors, for minutes of meet <a href="">check here</a></li>
+  <li>Started learning how to create debian package and understand the workflow (which I had started earlier and have some knowledge about) and setuped Debian packaging development environment.</li>
+  <li>I worked on packaging <a href="https://github.com/BelaPlatform/Bela">Bela</a> and <a href="https://source.denx.de/Xenomai/xenomai.git">Xenomai</a>. At first, I have not been able to work on makefiles.</li>
+  <li>As these software source code have makefiles to use and build the Binaries, and looked for are there any tool that can decrease the hustle of these makefiles to build the binaries easily, so till that time, the work is on pause.</li>
+  <li>Parallely, gone through the tutorials of makefiles and with a little understanding and started working on these packages.</li>
+  <li>Packaged <a href="https://git.beagleboard.org/gsoc/building-bela-images/-/tree/main/debian-packages/xenomai">xenomai-v3.0.12</a>, xenomai package is either very new and hasn’t on debian mirrors yet and it’s old package eventually got removed.</li>
+  <li>Rest this week I learned a lot about Debian packaging, makefiles, though this week was slow on the work phase but I learned a lot during this week.</li>
+</ul>
+:ET

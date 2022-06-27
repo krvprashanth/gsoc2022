@@ -17,13 +17,13 @@ May 20 - June 12
 - Read the [Building Beagle-based embedded linux systems](http://exploringbeaglebone.com/chapter3/).
 - Started reading about U-Boot, Debootstrap and study how to use it.
 - I have to read and write bash scripts during the project. Read these books/guides to Improve bash/command-line skills.
-    1. https://linuxcommand.org/tlcl.php
-    2. https://www.gnu.org/software/bash/manual/bash.pdf
-    3. https://en.wikibooks.org/wiki/Bash_Shell_Scripting 
+    1. [https://linuxcommand.org/tlcl.php](https://linuxcommand.org/tlcl.php)
+    2. [https://www.gnu.org/software/bash/manual/bash.pdf](https://www.gnu.org/software/bash/manual/bash.pdf)
+    3. [https://en.wikibooks.org/wiki/Bash_Shell_Scripting](https://en.wikibooks.org/wiki/Bash_Shell_Scripting) 
 - Attended GSoC 2022 Contributor Summit.
 - Reached out to mentors regarding the following:
     1. How often we should have meeting for the project progress and doubts.
     2. And, also to schedule a meet with Bela community as well as I really wanna know a lot, and to trully understand the motive behind the Bela platform.
     3. Scheduled a calender Invite for rugular weekly meeting with mentors.
 - Last community bonding meet was in BeagleBoard slack channel.
-- Created an account in BeagleBoard gitlab Instance https://git.beagleboard.org and a project repo up [here](https://git.beagleboard.org/gsoc/building-bela-images) for issue tracking of the blockers while building Images.
+- Created an account in BeagleBoard gitlab Instance [https://git.beagleboard.org](https://git.beagleboard.org) and a project repo up [here](https://git.beagleboard.org/gsoc/building-bela-images) for issue tracking of the blockers while building Images.

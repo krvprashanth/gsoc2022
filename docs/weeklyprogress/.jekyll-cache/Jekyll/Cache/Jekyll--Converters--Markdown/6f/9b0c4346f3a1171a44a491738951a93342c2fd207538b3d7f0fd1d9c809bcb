@@ -1,7 +1,8 @@
-I"6<hr />
+I"�	<hr />
 <h1 id="week-1">Week 1</h1>
-<p>June 13 - June 19
-—</p>
+<p>June 13 - June 19</p>
+
+<hr />
 <ul>
   <li>Bela Cape has shipped from London. (13 June)</li>
   <li>Had #1 weekly meet with mentors Giulio Moro, Vedant Paranjape, and Vaishnav Achath regarding project progress and doubts.</li>
@@ -21,6 +22,7 @@
   <li>Worked on to understand the workflows of both bela-image-builder and BeagleBoard Image builder repos by rebuilding bela, beagleboard Images and spent most hours on resolving build issues, and downloading code to my build machine.</li>
   <li>Giulio Moro pushed a couple of updates to bela-image-builder that allowed to reproduce image with out any issues.</li>
   <li>Went through the proposal to revise the workflow and made few changes.</li>
+  <li>This week I couldn’t progress much, spent most hours on resolving build errors and downloading source to my build machine (I had low bandwidth with shared Internet access) and I was not much clear about my project timeline, and struggled a bit to get started and things were not excepted as thought. Although now I have better roadmapp tp move forward in project.</li>
 </ul>
 
 :ET
