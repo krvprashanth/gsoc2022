@@ -1,6 +1,13 @@
-I"ê<hr />
+I"u<hr />
+<h2 id="table-of-contents"><strong>Table of Contents</strong></h2>
 
-<h1 id="quick-wiki-arm-cross-compilation-on-debian-x86-machine">Quick-wiki: ARM Cross-Compilation on Debian x86 Machine</h1>
+<ul>
+  <li><a href="#quick-wiki-arm-cross-compilation-on-debian-x86-machine">ARM Cross-Compilation on Debian x86 Machine</a></li>
+</ul>
+
+<hr />
+
+<h3 id="quick-wiki-arm-cross-compilation-on-debian-x86-machine"><strong>Quick-wiki: ARM Cross-Compilation on Debian x86 Machine</strong></h3>
 <hr />
 <p>The latest versions of DebianDebian has excellent support for cross-building through Debian Cross-toolchains ( see wiki: <a href="https://wiki.debian.org/ToolChain/Cross">https://wiki.debian.org/ToolChain/Cross</a> ).</p>
 

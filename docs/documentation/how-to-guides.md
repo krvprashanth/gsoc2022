@@ -1,12 +1,19 @@
 ---
 layout: default
-title: ARM Cross-Compilation on Debian x86 Machine
+title: How-To Guides
 parent: Documentation
 nav_order: 1
 ---
----
 
-# Quick-wiki: ARM Cross-Compilation on Debian x86 Machine
+---------------------------------------------------------------------------------------------------
+## **Table of Contents**
+
+
+- [ARM Cross-Compilation on Debian x86 Machine](#quick-wiki-arm-cross-compilation-on-debian-x86-machine)
+
+ --------------------------------------------------------------------------
+ 
+### **Quick-wiki: ARM Cross-Compilation on Debian x86 Machine**
 ---
 The latest versions of DebianDebian has excellent support for cross-building through Debian Cross-toolchains ( see wiki: [https://wiki.debian.org/ToolChain/Cross](https://wiki.debian.org/ToolChain/Cross) ).
 
