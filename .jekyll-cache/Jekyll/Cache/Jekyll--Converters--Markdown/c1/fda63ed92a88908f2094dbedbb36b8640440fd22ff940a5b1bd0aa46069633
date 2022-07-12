@@ -1,8 +1,9 @@
-I"u<hr />
-<h2 id="table-of-contents"><strong>Table of Contents</strong></h2>
+I"�"<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
 
 <ul>
   <li><a href="#quick-wiki-arm-cross-compilation-on-debian-x86-machine">ARM Cross-Compilation on Debian x86 Machine</a></li>
+  <li><a href="#find-sd-card-device-name">Find SD card device name</a></li>
 </ul>
 
 <hr />
@@ -95,5 +96,49 @@ Testing cross compilation for armhf
 </code></pre></div></div>
 
 <p>Success! If we see this output, then we are able to build a binary on the x86 machine that can be executed directly on the ARM machine.</p>
+
+<hr />
+<h3 id="find-sd-card-device-name"><strong>Find SD card device name</strong></h3>
+<hr />
+<p>The SD card is an essential part of the Embedded Linux Systems. It’s often necessary to copy(or “flash”) the software from our machine to an SD card for use in Embedded Linux System, or to back up projects ot the entire contents of SD card.</p>
+
+<p>This guide is about to find the SD card’s device name! <em>choosing the wrong drive will likely result in data loss or even worse harm to our machine</em>.</p>
+
+<p>My machine has an Integrated SD card reader and it is connected by a multiport USB unit and will be presented as <code class="language-plaintext highlighter-rouge">/dev/sdx</code>, where <code class="language-plaintext highlighter-rouge">X</code> is a single letter. The first hard drive is often /dev/sda. In most of the machines with SD card slots, this wiil be often be <code class="language-plaintext highlighter-rouge">/dev/mmcblk0</code>.</p>
+
+<p>I find the following method to be handy and simple:</p>
+
+<p><strong>Step1</strong>: Open a terminal</p>
+
+<p><strong>Step2</strong>: Get the list of existing devices in our system into a temporary file (say, /tmp/before_sd):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prashanth@krv:~$ ls /dev &gt; /tmp/before_sd
+</code></pre></div></div>
+
+<p><strong>Step3</strong>: Insert SD card (be it via an external reader or directly to the SD port of your computer)</p>
+
+<p><strong>Step4</strong>: Get again the list of devices into a second temporary file (say, /tmp/after_sd):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prashanth@krv:~$ ls /dev &gt; /tmp/after_sd
+</code></pre></div></div>
+
+<p><strong>Step5</strong>: Compare them</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prashanth@krv:~$ diff /tmp/before_sd /tmp/after_sd
+36a37,39
+&gt; mmcblk0
+&gt; mmcblk0p1
+&gt; mmcblk0p2
+</code></pre></div></div>
+
+<p>Or, if the device follows <code class="language-plaintext highlighter-rouge">sdX</code>, it would be:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prashanth@krv:~$ diff /tmp/before_sd /tmp/after_sd
+55a57,59
+&gt; sda
+&gt; sda1 
+</code></pre></div></div>
+
+<p><strong>Note</strong>: The topmost name we received - In my case, <code class="language-plaintext highlighter-rouge">sda</code>. That’s the device we want to write to! (the other devices will point to partitions within the media we inserted).</p>
 
 :ET

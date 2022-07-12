@@ -51,5 +51,6 @@ This project adds support for the Bela Image development to make Bela Image foll
 ---
 - [Original GSoC Project idea](https://elinux.org/BeagleBoard/GSoC/Ideas-2022)
 - [https://github.com/BelaPlatform](https://github.com/BelaPlatform)
+- [https://bela.io](https://bela.io)
 - [https://github.com/beagleboard/image-builder](https://github.com/beagleboard/image-builder)
-- [http://www.denx.de/wiki/U-Boot](http://www.denx.de/wiki/U-Boot)
+- [https://github.com/BelaPlatform/bela-image-builder](https://github.com/BelaPlatform/bela-image-builder)

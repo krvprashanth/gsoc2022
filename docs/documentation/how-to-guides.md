@@ -6,10 +6,11 @@ nav_order: 1
 ---
 
 ---------------------------------------------------------------------------------------------------
-## **Table of Contents**
+## Table of Contents
 
 
 - [ARM Cross-Compilation on Debian x86 Machine](#quick-wiki-arm-cross-compilation-on-debian-x86-machine)
+- [Find SD card device name](#find-sd-card-device-name)
 
  --------------------------------------------------------------------------
  
@@ -95,5 +96,45 @@ One approach to solve this issue is to explicitly call the QEMU tool and specify
 
 Success! If we see this output, then we are able to build a binary on the x86 machine that can be executed directly on the ARM machine. 
 
+ --------------------------------------------------------------------------
+### **Find SD card device name**
+ --------------------------------------------------------------------------
+The SD card is an essential part of the Embedded Linux Systems. It's often necessary to copy(or "flash") the software from our machine to an SD card for use in Embedded Linux System, or to back up projects ot the entire contents of SD card.
 
+This guide is about to find the SD card's device name! *choosing the wrong drive will likely result in data loss or even worse harm to our machine*.
+
+My machine has an Integrated SD card reader and it is connected by a multiport USB unit and will be presented as `/dev/sdx`, where `X` is a single letter. The first hard drive is often /dev/sda. In most of the machines with SD card slots, this wiil be often be `/dev/mmcblk0`.
+
+I find the following method to be handy and simple:
+
+**Step1**: Open a terminal
+
+**Step2**: Get the list of existing devices in our system into a temporary file (say, /tmp/before_sd):
+      
+    prashanth@krv:~$ ls /dev > /tmp/before_sd
+     
+**Step3**: Insert SD card (be it via an external reader or directly to the SD port of your computer)
+
+**Step4**: Get again the list of devices into a second temporary file (say, /tmp/after_sd):
+ 
+    prashanth@krv:~$ ls /dev > /tmp/after_sd
+ 
+**Step5**: Compare them
+   
+    prashanth@krv:~$ diff /tmp/before_sd /tmp/after_sd
+    36a37,39
+    > mmcblk0
+    > mmcblk0p1
+    > mmcblk0p2
+ 
+ Or, if the device follows `sdX`, it would be:
+ 
+    prashanth@krv:~$ diff /tmp/before_sd /tmp/after_sd
+    55a57,59
+    > sda
+    > sda1 
+    
+
+ 
+ **Note**: The topmost name we received - In my case, `sda`. That’s the device we want to write to! (the other devices will point to partitions within the media we inserted).
 

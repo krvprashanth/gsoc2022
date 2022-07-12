@@ -18,5 +18,5 @@ June 20 - June 26
 - Packaged [xenomai-v3.0.12](https://git.beagleboard.org/gsoc/building-bela-images/-/tree/main/debian-packages/xenomai), xenomai package is either very new and hasn't on debian mirrors yet and it's old package eventually got removed.
 - Rest this week I learned a lot about Debian packaging, makefiles, though this week was slow on the work phase but I learned a lot during this week.
 
-**On-going blockers:**
+#### **Blockers**
 - [https://git.beagleboard.org/gsoc/building-bela-images/-/issues/1](https://git.beagleboard.org/gsoc/building-bela-images/-/issues/1)

@@ -1,4 +1,4 @@
-I"	<hr />
+I"<hr />
 <h1 id="week-2">Week 2</h1>
 <p>June 20 - June 26</p>
 
@@ -14,7 +14,7 @@
   <li>Rest this week I learned a lot about Debian packaging, makefiles, though this week was slow on the work phase but I learned a lot during this week.</li>
 </ul>
 
-<p><strong>On-going blockers:</strong></p>
+<h4 id="blockers"><strong>Blockers</strong></h4>
 <ul>
   <li><a href="https://git.beagleboard.org/gsoc/building-bela-images/-/issues/1">https://git.beagleboard.org/gsoc/building-bela-images/-/issues/1</a></li>
 </ul>

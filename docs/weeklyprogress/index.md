@@ -2,7 +2,7 @@
 layout: default
 title: Weekly Progress
 has_children: true
-nav_order: 
+nav_order: 4
 ---
 
 # Weekly Progress

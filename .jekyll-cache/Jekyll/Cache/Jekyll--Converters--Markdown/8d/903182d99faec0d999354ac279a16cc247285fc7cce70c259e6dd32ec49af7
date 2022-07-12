@@ -1,4 +1,4 @@
-I"€<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"á<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoCâ€™2022 | BeagleBoard.org</a></h2>
 <hr />
 
@@ -48,7 +48,8 @@
 <ul>
   <li><a href="https://elinux.org/BeagleBoard/GSoC/Ideas-2022">Original GSoC Project idea</a></li>
   <li><a href="https://github.com/BelaPlatform">https://github.com/BelaPlatform</a></li>
+  <li><a href="https://bela.io">https://bela.io</a></li>
   <li><a href="https://github.com/beagleboard/image-builder">https://github.com/beagleboard/image-builder</a></li>
-  <li><a href="http://www.denx.de/wiki/U-Boot">http://www.denx.de/wiki/U-Boot</a></li>
+  <li><a href="https://github.com/BelaPlatform/bela-image-builder">https://github.com/BelaPlatform/bela-image-builder</a></li>
 </ul>
 :ET
