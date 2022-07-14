@@ -17,6 +17,6 @@ June 13 - June 19
 - Worked on to understand the workflows of both bela-image-builder and BeagleBoard Image builder repos by rebuilding bela, beagleboard Images and spent most hours on resolving build issues, and downloading code to my build machine.
 - Giulio Moro pushed a couple of updates to bela-image-builder that allowed to reproduce image with out any issues.
 - Went through the proposal to revise the workflow and made few changes.
-- This week I couldn't progress much, spent most hours on resolving build errors and downloading source to my build machine (I had low bandwidth with shared Internet access) to reproduce Bela and BeagleBoard Images and I was not much clear about my project timeline, and struggled a bit to get started and things were not excepted as thought. Although now I have better roadmapp tp move forward in project.
+- This week I couldn't progress much, spent most hours on resolving build errors and downloading source to my build machine (I had low bandwidth with shared Internet access) to reproduce Bela and BeagleBoard Images and I was not much clear about my project timeline, and struggled a bit to get started and things were not excepted as thought. Although now I have better roadmap to move forward in project.
 
 
