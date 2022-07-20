@@ -1,0 +1,29 @@
+I"�<hr />
+<h1 id="building-bela-images">Building Bela Images</h1>
+<p>Exerimental Bela Image build with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></p>
+
+<hr />
+<p><strong>Generate</strong>: Base Debian Image:</p>
+
+<h6 id="debian-stretch-913">Debian Stretch 9.13</h6>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/RobertCNelson/omap-image-builder
+cd ./omap-image-builder
+./RootStock-NG.sh -c bela.io-debian-stretch-armhf-v4.14-ti-xenomai
+</code></pre></div></div>
+
+<p>Debian Bullseye 11.4</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/RobertCNelson/omap-image-builder
+cd ./omap-image-builder
+./RootStock-NG.sh -c beagle-bela-stretch-bela-v4.14-ti-xenomai
+</code></pre></div></div>
+
+<p>Archive will be under ‘./deploy/’</p>
+
+<p>Finalize: Bela specific version:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-disable-pru
+</code></pre></div></div>
+
+:ET

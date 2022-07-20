@@ -1,0 +1,29 @@
+I"y<hr />
+<h1 id="building-bela-images">Building Bela Images</h1>
+<p>Exerimental Bela Image build with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></p>
+
+<hr />
+<h2 id="generate-base-debian-image"><strong>Generate</strong>: Base Debian Image:</h2>
+
+<h3 id="debian-stretch-913">Debian Stretch 9.13</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/RobertCNelson/omap-image-builder
+cd ./omap-image-builder
+./RootStock-NG.sh -c bela.io-debian-stretch-armhf-v4.14-ti-xenomai
+</code></pre></div></div>
+
+<h3 id="debian-bullseye-114">Debian Bullseye 11.4</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/RobertCNelson/omap-image-builder
+cd ./omap-image-builder
+./RootStock-NG.sh -c beagle-bela-stretch-bela-v4.14-ti-xenomai
+</code></pre></div></div>
+
+<h3 id="archive-will-be-under-deploy">Archive will be under ‘./deploy/’</h3>
+
+<h3 id="finalize-bela-specific-version">Finalize: Bela specific version:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-disable-pru
+</code></pre></div></div>
+
+:ET
