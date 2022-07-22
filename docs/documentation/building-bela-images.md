@@ -44,3 +44,4 @@ Bela Image builds with [RobertCNelson/omap-image-builder scripts](https://github
 | **[ rcn-ee/repos ](https://github.com/rcn-ee/repos)** | [Xenomai, seasocks Debian packages](https://github.com/rcn-ee/repos/pull/60) | Closed |
 | **[RobertCNelson/omap-image-builder](https://github.com/RobertCNelson/omap-image-builder)** | [Update packages list of Bela in configs](https://github.com/RobertCNelson/omap-image-builder/pull/199) | Closed |
 | **[RobertCNelson/omap-image-builder](https://github.com/RobertCNelson/omap-image-builder)** | [bela-bullseye-image-build](https://github.com/RobertCNelson/omap-image-builder/pull/200) | Merged |
+| **[RobertCNelson/omap-image-builder](https://github.com/RobertCNelson/omap-image-builder)** | [figured out what packages failed to install and made necessary changes](https://github.com/RobertCNelson/omap-image-builder/pull/201) | Merged |

@@ -1,10 +1,11 @@
-I"
-<hr />
+I"�<hr />
 <h1 id="building-bela-images">Building Bela Images</h1>
 <p>Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></p>
 
 <hr />
-<h2 id="1-bela-image-builds-with-robertcnelsonomap-image-builder-scripts">1. Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></h2>
+<h2 id="build-instructions-"><strong>Build Instructions :</strong></h2>
+<h3 id="1-download-robertcnelsonomap-image-builder">1. Download RobertCNelson/omap-image-builder</h3>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/RobertCNelson/omap-image-builder
 cd ./omap-image-builder
 </code></pre></div></div>
@@ -20,10 +21,15 @@ cd ./omap-image-builder
 
 <h3 id="archive-will-be-under-deploy">Archive will be under ‘./deploy/’</h3>
 
-<h3 id="3-finalize-bela-specific-version">3. Finalize: Bela specific version:</h3>
+<h3 id="3-finalize-bela-specific-version">3. <strong>Finalize</strong>: Bela specific version:</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-disable-pru
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-enable-pru
 </code></pre></div></div>
+
+<hr />
+<h1 id="achieved-milestones">Achieved Milestones</h1>
+
+<hr />
 
 <hr />
 <h1 id="pull-requests">Pull Requests</h1>
@@ -52,6 +58,11 @@ cd ./omap-image-builder
     <tr>
       <td><strong><a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder</a></strong></td>
       <td><a href="https://github.com/RobertCNelson/omap-image-builder/pull/200">bela-bullseye-image-build</a></td>
+      <td>Merged</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder</a></strong></td>
+      <td><a href="https://github.com/RobertCNelson/omap-image-builder/pull/201">figured out what packages failed to install and made necessary changes</a></td>
       <td>Merged</td>
     </tr>
   </tbody>

@@ -43,7 +43,7 @@
   },"7": {
     "doc": "Building Bela Images",
     "title": "Pull Requests",
-    "content": ". | Repository | PR | Status | . | rcn-ee/repos | Xenomai, seasocks Debian packages | Closed | . | RobertCNelson/omap-image-builder | Update packages list of Bela in configs | Closed | . | RobertCNelson/omap-image-builder | bela-bullseye-image-build | Merged | . ",
+    "content": ". | Repository | PR | Status | . | rcn-ee/repos | Xenomai, seasocks Debian packages | Closed | . | RobertCNelson/omap-image-builder | Update packages list of Bela in configs | Closed | . | RobertCNelson/omap-image-builder | bela-bullseye-image-build | Merged | . | RobertCNelson/omap-image-builder | figured out what packages failed to install and made necessary changes | Merged | . ",
     "url": "http://localhost:4000/docs/documentation/building-bela-images/#pull-requests",
     "relUrl": "/docs/documentation/building-bela-images/#pull-requests"
   },"8": {
