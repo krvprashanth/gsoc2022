@@ -23,29 +23,29 @@
     "url": "http://localhost:4000/docs/weeklyprogress/Pre%20Selection/",
     "relUrl": "/docs/weeklyprogress/Pre%20Selection/"
   },"4": {
-    "doc": "Bela Image Builder",
-    "title": "Table of Contents",
-    "content": ". | Notes on Bela Image Build Process | . ",
-    "url": "http://localhost:4000/docs/documentation/bela-image-builder/#table-of-contents",
-    "relUrl": "/docs/documentation/bela-image-builder/#table-of-contents"
-  },"5": {
-    "doc": "Bela Image Builder",
-    "title": "Bela Image Builder",
-    "content": ". ",
-    "url": "http://localhost:4000/docs/documentation/bela-image-builder/",
-    "relUrl": "/docs/documentation/bela-image-builder/"
-  },"6": {
     "doc": "Building Bela Images",
     "title": "Building Bela Images",
-    "content": "Exerimental Bela Image build with RobertCNelson/omap-image-builder scripts . ",
+    "content": "Bela Image builds with RobertCNelson/omap-image-builder scripts . ",
     "url": "http://localhost:4000/docs/documentation/building-bela-images/#building-bela-images",
     "relUrl": "/docs/documentation/building-bela-images/#building-bela-images"
+  },"5": {
+    "doc": "Building Bela Images",
+    "title": "Build Instructions :",
+    "content": "1. Download RobertCNelson/omap-image-builder . git clone https://github.com/RobertCNelson/omap-image-builder cd ./omap-image-builder . 2. Generate: Base Debian Images . Debian Stretch 9.13 ./RootStock-NG.sh -c bela.io-debian-stretch-armhf-v4.14-ti-xenomai . Debian Bullseye 11.4 ./RootStock-NG.sh -c bela.io-debian-bullseye-v4.14-ti-xenomai-armhf . Archive will be under ‘./deploy/’ . 3. Finalize: Bela specific version: . sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-enable-pru . ",
+    "url": "http://localhost:4000/docs/documentation/building-bela-images/#build-instructions-",
+    "relUrl": "/docs/documentation/building-bela-images/#build-instructions-"
+  },"6": {
+    "doc": "Building Bela Images",
+    "title": "Achieved Milestones",
+    "content": ". ",
+    "url": "http://localhost:4000/docs/documentation/building-bela-images/#achieved-milestones",
+    "relUrl": "/docs/documentation/building-bela-images/#achieved-milestones"
   },"7": {
     "doc": "Building Bela Images",
-    "title": "Generate: Base Debian Images",
-    "content": "Debian Stretch 9.13 . git clone https://github.com/RobertCNelson/omap-image-builder cd ./omap-image-builder ./RootStock-NG.sh -c bela.io-debian-stretch-armhf-v4.14-ti-xenomai . Debian Bullseye 11.4 . git clone https://github.com/RobertCNelson/omap-image-builder cd ./omap-image-builder ./RootStock-NG.sh -c bela.io-debian-bullseye-v4.14-ti-xenomai-armhf . Archive will be under ‘./deploy/’ . Finalize: Bela specific version: . sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-disable-pru . ",
-    "url": "http://localhost:4000/docs/documentation/building-bela-images/#generate-base-debian-images",
-    "relUrl": "/docs/documentation/building-bela-images/#generate-base-debian-images"
+    "title": "Pull Requests",
+    "content": ". | Repository | PR | Status | . | rcn-ee/repos | Xenomai, seasocks Debian packages | Closed | . | RobertCNelson/omap-image-builder | Update packages list of Bela in configs | Closed | . | RobertCNelson/omap-image-builder | bela-bullseye-image-build | Merged | . ",
+    "url": "http://localhost:4000/docs/documentation/building-bela-images/#pull-requests",
+    "relUrl": "/docs/documentation/building-bela-images/#pull-requests"
   },"8": {
     "doc": "Building Bela Images",
     "title": "Building Bela Images",
@@ -167,17 +167,17 @@
     "url": "http://localhost:4000/",
     "relUrl": "/"
   },"28": {
-    "doc": "Pull Requests",
-    "title": "Pull Requests",
-    "content": ". | Repository | PR | Status | . | RobertCNelson/omap-image-builder | Update packages list of Bela in configs | Open | . | rcn-ee/repos | Xenomai, seasocks Debian packages | Open | . ",
-    "url": "http://localhost:4000/docs/documentation/pull-requests/#pull-requests",
-    "relUrl": "/docs/documentation/pull-requests/#pull-requests"
+    "doc": "Project Notes",
+    "title": "Table of Contents",
+    "content": ". | Notes on Bela Image Build Process with BelaPlatform/bela-image-builder | . ",
+    "url": "http://localhost:4000/docs/documentation/project-notes/#table-of-contents",
+    "relUrl": "/docs/documentation/project-notes/#table-of-contents"
   },"29": {
-    "doc": "Pull Requests",
-    "title": "Pull Requests",
+    "doc": "Project Notes",
+    "title": "Project Notes",
     "content": ". ",
-    "url": "http://localhost:4000/docs/documentation/pull-requests/",
-    "relUrl": "/docs/documentation/pull-requests/"
+    "url": "http://localhost:4000/docs/documentation/project-notes/",
+    "relUrl": "/docs/documentation/project-notes/"
   },"30": {
     "doc": "Week 1",
     "title": "Week 1",

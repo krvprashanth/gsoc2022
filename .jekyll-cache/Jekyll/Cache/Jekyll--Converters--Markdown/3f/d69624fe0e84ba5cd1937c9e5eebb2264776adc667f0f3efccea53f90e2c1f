@@ -1,0 +1,65 @@
+I"7<hr />
+<h1 id="building-bela-images">Building Bela Images</h1>
+<p>Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></p>
+
+<hr />
+<h2 id="bela-image-builds-with-robertcnelsonomap-image-builder-scripts">Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></h2>
+<h3 id="1-download-robertcnelsonomap-image-builder">1. Download RobertCNelson/omap-image-builder</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/RobertCNelson/omap-image-builder
+cd ./omap-image-builder
+</code></pre></div></div>
+
+<h3 id="2-generate-base-debian-images">2. <strong>Generate</strong>: Base Debian Images</h3>
+<h4 id="debian-stretch-913">Debian Stretch 9.13</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./RootStock-NG.sh -c bela.io-debian-stretch-armhf-v4.14-ti-xenomai
+</code></pre></div></div>
+
+<h4 id="debian-bullseye-114">Debian Bullseye 11.4</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./RootStock-NG.sh -c bela.io-debian-bullseye-v4.14-ti-xenomai-armhf
+</code></pre></div></div>
+
+<h3 id="archive-will-be-under-deploy">Archive will be under ‘./deploy/’</h3>
+
+<h3 id="3-finalize-bela-specific-version">3. <strong>Finalize</strong>: Bela specific version:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-enable-pru
+</code></pre></div></div>
+
+<hr />
+<h1 id="achieved-milestones">Achieved Milestones</h1>
+
+<hr />
+
+<hr />
+<h1 id="pull-requests">Pull Requests</h1>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Repository</th>
+      <th>PR</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="https://github.com/rcn-ee/repos"> rcn-ee/repos </a></strong></td>
+      <td><a href="https://github.com/rcn-ee/repos/pull/60">Xenomai, seasocks Debian packages</a></td>
+      <td>Closed</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder</a></strong></td>
+      <td><a href="https://github.com/RobertCNelson/omap-image-builder/pull/199">Update packages list of Bela in configs</a></td>
+      <td>Closed</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder</a></strong></td>
+      <td><a href="https://github.com/RobertCNelson/omap-image-builder/pull/200">bela-bullseye-image-build</a></td>
+      <td>Merged</td>
+    </tr>
+  </tbody>
+</table>
+:ET
