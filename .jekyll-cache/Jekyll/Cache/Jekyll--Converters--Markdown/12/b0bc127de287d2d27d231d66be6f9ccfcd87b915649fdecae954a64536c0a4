@@ -1,0 +1,38 @@
+I"�<hr />
+<h1 id="week-5">Week 5</h1>
+<p>July 18 - July 24</p>
+
+<hr />
+
+<h4 id="accomplishments"><strong>Accomplishments</strong></h4>
+<ul>
+  <li>Built bela-bullseye Image with omap-image-builder scripts
+    <ul>
+      <li>Added package list of what currently bela ships <a href="https://github.com/RobertCNelson/omap-image-builder/pull/199">PR #199</a></li>
+      <li>bela-bullseye-image-build <a href="https://github.com/RobertCNelson/omap-image-builder/pull/200">PR #200</a></li>
+      <li>Figured out what packages failed to install and made necessary changes <a href="https://github.com/RobertCNelson/omap-image-builder/pull/201">PR #201</a></li>
+      <li>modified bela-bullseye chroot script <a href="https://github.com/RobertCNelson/omap-image-builder/pull/202">PR #202</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="blockers"><strong>Blockers</strong></h4>
+<ul>
+  <li>Unable to boot the built bela-stretch Image</li>
+  <li>Not able to Install bela base packages with debootstrap by using omap-Imap-builder scripts.</li>
+</ul>
+
+<h4 id="upcoming-targets"><strong>Upcoming Targets</strong></h4>
+<ul>
+  <li>Build latest bela-bullseye Image with omap-image-builder
+    <ul>
+      <li>flash and boot the image</li>
+      <li>copy on the board the Bela repo cd into it and do ‘makelib’</li>
+      <li>enable the BB-BELA-00A0.dtbo device tree overlay</li>
+      <li>create a <code class="language-plaintext highlighter-rouge">root</code> user, make it the default user, with no password and also delete the <code class="language-plaintext highlighter-rouge">debian</code> user that would be there as default</li>
+      <li><code class="language-plaintext highlighter-rouge">make EXAMPLE=Fundamentals/sinetone</code> in the Bela folder and it should work</li>
+    </ul>
+  </li>
+</ul>
+
+:ET
