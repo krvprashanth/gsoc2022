@@ -11,7 +11,7 @@ July 18 - July 24
 ---
 
 - Placed order for USB to TTL Serial Cable -UART connection to debug boot process.
-- Had weekly meeting with Giulio Moro on  Monday, 20 June, 4:30 pm CEST ( 8:00 IST ) and for minutes of meet [check here]()
+- Had weekly meeting with Giulio Moro on  Monday, 20 June, 4:30 pm CEST ( 8:00 IST ) and for minutes of meet [check here](https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week6)
 - Flash and booted the bela-stretch image which built in lask week and couldn't test the image with examlpe sintone working and as per mentor suggestion started building latest bullseye image for bela.
 - Initially, when i tried with the all Bela required packages that were in packages.txt of bela-image-builder and the build getting failed at the point resolving packages and none of the packages weren't able to install via debootstrap. Tried with including bela-image-builder parameters for debootstrap in omap-image-builder scripts though it showed same error.
 - Much time was spent on debootstrap trying to figure where it's coming from and it fixed with Robert Nelson help.
