@@ -42,6 +42,21 @@ July 18 - July 24
 - No Blockers
 
 #### **Upcoming Targets**
-I'll update upcoming targets once after discussing in weelky meet with mentors.
+- Add these files to Bela Image build scripts in omap-image-builder
+    - `bela-image-builder/misc/rootfs/lib/systemd/system`
+    - `bela-image-builder/misc/rootfs/opt/Bela`
+    - more in general all the files that are in `bela-image-builder/misc/rootfs` have a reason to be there.
+    
+- And also those in 
+    - `/lib/system` : copy them over and enable bela_button, bela_ide (systemctl enable bela_button bela_ide)
+    - `/opt/Bela`: copy them over
+    - `/root` : copy them over
+    - `/etc`: need to be checked one by one to see what special settings have been applied
+
+- bela_gadget files
+    - check what differences there are with the omap-image-builder version (They have a service called bb-usb-gadgets.service . See what that does and what file it uses)
+    - see whether it can "inject" some of these changes in the upstream version or whether we should be maintaining a "forked" version
+- `/lib/systemd/system/bela_flash_emmc.service` and `/opt/Bela/bela_flash_emmc.sh` has similar problems.
+      
 
 

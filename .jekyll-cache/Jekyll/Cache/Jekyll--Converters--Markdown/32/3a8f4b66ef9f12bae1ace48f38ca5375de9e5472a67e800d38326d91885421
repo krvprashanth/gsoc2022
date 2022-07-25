@@ -1,12 +1,12 @@
-I"!<hr />
+I"f<hr />
 <h1 id="week-6">Week 6</h1>
 <p>July 18 - July 24</p>
 
 <hr />
 
 <ul>
-  <li>Placed order for USB to TTL Serial Cable -UART connection to debug boot process.</li>
-  <li>Had weekly meeting with Giulio Moro on  Monday, 20 June, 4:30 pm CEST ( 8:00 IST ) and for minutes of meet <a href="">check here</a></li>
+  <li>Placed order for USB to TTL Serial Cable - UART connection to debug boot process.</li>
+  <li>Had weekly meeting with Giulio Moro on  Monday, 20 June, 4:30 pm CEST ( 8:00 IST ) and for minutes of meet <a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week6">check here</a></li>
   <li>Flash and booted the bela-stretch image which built in lask week and couldn’t test the image with examlpe sintone working and as per mentor suggestion started building latest bullseye image for bela.</li>
   <li>Initially, when i tried with the all Bela required packages that were in packages.txt of bela-image-builder and the build getting failed at the point resolving packages and none of the packages weren’t able to install via debootstrap. Tried with including bela-image-builder parameters for debootstrap in omap-image-builder scripts though it showed same error.</li>
   <li>Much time was spent on debootstrap trying to figure where it’s coming from and it fixed with Robert Nelson help.</li>
@@ -14,9 +14,15 @@
   <li>bela.io-debian-bullseye-v4.14-ti-xenomai-armhf build completes all the way and ready for boot testing and figured out what packages broke and then moved that packages under “deb_addition_pkgs” in bela-bullseye conf file.</li>
   <li>Studied about <a href="https://live-team.pages.debian.net/live-manual/html/live-manual/customizing-contents.en.html">Debian Live Manual/Customizing Contents</a></li>
   <li>Experimented on different ideas that which is suitable method for cross-compiling  xenomai-3 for Bela with omap-image-builder including in /target/chroot script or chroot_before_hook in /configs bela-bullseye file.</li>
-  <li>Updated the target/chroot script (bela.io-bullseye.sh) with installation scripts to repos that bela ships and removed the ones that were not required for bela.
-    <h4 id="accomplishments"><strong>Accomplishments</strong></h4>
-  </li>
+  <li>Updated the target/chroot script (bela.io-bullseye.sh) with installation scripts to repos that bela ships and removed the ones that were not required for bela.</li>
+  <li>And, also spent some time on understanding Jenkins build systems as every git commit of omap-image-builder get’s built and a full log is available, So it’s quick to see if something broke and it just as a validate/helper.</li>
+  <li>bela-bullseye Image build logs can be seen <a href="http://eewiki.org:8080/job/ci-image-builder/view/change-requests/builds">here</a></li>
+</ul>
+
+<hr />
+
+<h4 id="accomplishments"><strong>Accomplishments</strong></h4>
+<ul>
   <li>Built bela-bullseye Image with omap-image-builder scripts
     <ul>
       <li>Added package list of what currently bela ships <a href="https://github.com/RobertCNelson/omap-image-builder/pull/199">[PR #199]</a></li>
@@ -40,6 +46,29 @@
 </ul>
 
 <h4 id="upcoming-targets"><strong>Upcoming Targets</strong></h4>
-<p>Update upcoming targets once after discussing in weelky meet with mentors.</p>
+<ul>
+  <li>Add these files to Bela Image build scripts in omap-image-builder
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">bela-image-builder/misc/rootfs/lib/systemd/system</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bela-image-builder/misc/rootfs/opt/Bela</code></li>
+      <li>more in general all the files that are in <code class="language-plaintext highlighter-rouge">bela-image-builder/misc/rootfs</code> have a reason to be there.</li>
+    </ul>
+  </li>
+  <li>And also those in
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">/lib/system</code> : copy them over and enable bela_button, bela_ide (systemctl enable bela_button bela_ide)</li>
+      <li><code class="language-plaintext highlighter-rouge">/opt/Bela</code>: copy them over</li>
+      <li><code class="language-plaintext highlighter-rouge">/root</code> : copy them over</li>
+      <li><code class="language-plaintext highlighter-rouge">/etc</code>: need to be checked one by one to see what special settings have been applied</li>
+    </ul>
+  </li>
+  <li>bela_gadget files
+    <ul>
+      <li>check what differences there are with the omap-image-builder version (They have a service called bb-usb-gadgets.service . See what that does and what file it uses)</li>
+      <li>see whether it can “inject” some of these changes in the upstream version or whether we should be maintaining a “forked” version</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">/lib/systemd/system/bela_flash_emmc.service</code> and <code class="language-plaintext highlighter-rouge">/opt/Bela/bela_flash_emmc.sh</code> has similar problems.</li>
+</ul>
 
 :ET
