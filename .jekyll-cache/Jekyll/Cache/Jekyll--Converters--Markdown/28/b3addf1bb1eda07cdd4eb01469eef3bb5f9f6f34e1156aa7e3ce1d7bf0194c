@@ -1,0 +1,26 @@
+I"><hr />
+<h1 id="week-7">Week 7</h1>
+<p>July 25 - July 31</p>
+
+<hr />
+<ul>
+  <li>Had weekly meeting with Giulio Moro on Monday, 25 June, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet <a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week7">check here</a></li>
+  <li>Bela required source hvcc has python2 dependencies of pip2, enum, jinja2 and in bullseye, python2 is gone. So, adjusted everything for python3-<package name=""> ( updated python3 version of hvcc and added dependency package tox in bela-bullseye conf ) and also removed enum package that no more it required.</package></li>
+  <li>Initialized a repo for <a href="https://git.beagleboard.org/krvprashanth/bela-customizations">bela-customizations</a> and copied the /misc/rootfs of bela-image-builder repo ( <a href="https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs">https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs</a> ) into it and used this repo as source for debian packaging.</li>
+  <li>Studied about <a href="">systemd System and Service Manager</a></li>
+  <li>Debian packaged bela customizations</li>
+  <li>While packaging systemd files learnt a lot about systemd and service manager spent some good time on this and systemd files are fun to deal with.. bela had a tone of them!!!! :)</li>
+</ul>
+
+<hr />
+
+<h4 id="accomplishments"><strong>Accomplishments</strong></h4>
+
+<h4 id="blockers"><strong>Blockers</strong></h4>
+<ul>
+  <li>No Blockers</li>
+</ul>
+
+<h4 id="upcoming-targets"><strong>Upcoming Targets</strong></h4>
+
+:ET

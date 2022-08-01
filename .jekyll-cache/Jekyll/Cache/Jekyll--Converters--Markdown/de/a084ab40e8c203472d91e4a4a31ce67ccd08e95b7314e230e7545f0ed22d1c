@@ -1,0 +1,31 @@
+I"�<hr />
+<h1 id="week-7">Week 7</h1>
+<p>July 25 - July 31</p>
+
+<hr />
+<ul>
+  <li>Had weekly meeting with Giulio Moro on Monday, 25 June, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet <a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week7">check here</a></li>
+  <li>Currently, bela-image-builder ships <a href="https://github.com/giuliomoro/hvcc">hvcc</a> (heavy hvcc compiler) that has <code class="language-plaintext highlighter-rouge">python</code> dependencies of <code class="language-plaintext highlighter-rouge">pip2</code>, <code class="language-plaintext highlighter-rouge">enum</code>, <code class="language-plaintext highlighter-rouge">jinja2</code> and Debian 11 (bullseye) has removed the “ <code class="language-plaintext highlighter-rouge">python</code> package and the <code class="language-plaintext highlighter-rouge">/usr/bin/python</code> symlink due to the deprecation of Python 2.. So, adjusted everything for <code class="language-plaintext highlighter-rouge">python3-&lt;package name&gt;</code> ( updated python3 version of <a href="https://github.com/Wasted-Audio/hvcc/">hvcc</a> and added dependency package <code class="language-plaintext highlighter-rouge">tox</code> in bela-bullseye conf ) and also removed <code class="language-plaintext highlighter-rouge">enum</code> package that no more it required.</li>
+  <li>Initialized a repo for <a href="https://git.beagleboard.org/krvprashanth/bela-customizations">bela-customizations</a> and copied the /misc/rootfs of bela-image-builder repo ( <a href="https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs">https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs</a> ) into it and used this repo as source for debian packaging.</li>
+  <li>Studied about <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd System and Service Manager</a> and <a href="http://0pointer.de/blog/">Lennart Poettering’s</a> blog which has lots of information about <code class="language-plaintext highlighter-rouge">systemd</code></li>
+  <li>Debian packaged bela customizations.</li>
+  <li>Used this <a href="https://man7.org/linux/man-pages/man1/dh_installsystemd.1.html">dh_installsystemd</a> to package the bela systemd files.</li>
+  <li>While packaging systemd files learnt a lot about systemd and service manager spent some good time on this and systemd files are fun to deal with.. bela had a tone of them!!!! :)</li>
+</ul>
+
+<hr />
+
+<h4 id="accomplishments"><strong>Accomplishments</strong></h4>
+<ul>
+  <li>update to python3 version of hvcc compiler <a href="https://github.com/RobertCNelson/omap-image-builder/pull/205">[PR #205]</a></li>
+  <li>Add debian package configuration of bela customizations <a href="https://github.com/rcn-ee/repos/pull/61">[PR #61]</a></li>
+</ul>
+
+<h4 id="blockers"><strong>Blockers</strong></h4>
+<ul>
+  <li>No Blockers</li>
+</ul>
+
+<h4 id="upcoming-targets"><strong>Upcoming Targets</strong></h4>
+
+:ET
