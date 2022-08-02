@@ -1,13 +1,14 @@
-I"�<hr />
+I"<hr />
 <h1 id="week-7">Week 7</h1>
 <p>July 25 - July 31</p>
 
 <hr />
 <ul>
-  <li>Had weekly meeting with Giulio Moro on Monday, 25 June, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet <a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week7">check here</a></li>
+  <li>Had weekly meeting with Giulio Moro on Monday, 25 July, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet <a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week7">check here</a></li>
   <li>Currently, bela-image-builder ships <a href="https://github.com/giuliomoro/hvcc">hvcc</a> (heavy hvcc compiler) that has <code class="language-plaintext highlighter-rouge">python2</code> dependencies of <code class="language-plaintext highlighter-rouge">pip2</code>, <code class="language-plaintext highlighter-rouge">enum</code>, <code class="language-plaintext highlighter-rouge">jinja2</code> and Debian 11 (bullseye) has removed the “ <code class="language-plaintext highlighter-rouge">python</code> package and the <code class="language-plaintext highlighter-rouge">/usr/bin/python</code> symlink due to the deprecation of Python 2.. though it has minimal support for python 2.7 adjusted everything for <code class="language-plaintext highlighter-rouge">python3-&lt;package name&gt;</code> ( updated python3 version of <a href="https://github.com/Wasted-Audio/hvcc/">hvcc</a> and added dependency package <code class="language-plaintext highlighter-rouge">tox</code> in bela-bullseye conf ) and also removed <code class="language-plaintext highlighter-rouge">enum</code> package that no more it required.</li>
   <li>Looked at how <a href="https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh">bela-gadget</a> is different with compared to bb-usb-gadget (what that does and what file it uses) and whether it can be ‘inject’ some of bela changes init.</li>
   <li>bb-usb-gadget, takes over anything to do with usb gadget loading.. and it has a systemd script which didn’t exist in prior then bullseye (<a href="https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-usb-gadgets.bb-usb-gadgets.service">https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-usb-gadgets.bb-usb-gadgets.service</a>)</li>
+  <li>Started working on to create a bela-customizations debian package.</li>
   <li>Initialized a repo for <a href="https://git.beagleboard.org/krvprashanth/bela-customizations">bela-customizations</a> and copied the /misc/rootfs of bela-image-builder repo ( <a href="https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs">https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs</a> ) into it and used this repo as source for debian packaging.</li>
   <li>Studied about <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd System and Service Manager</a> and <a href="http://0pointer.de/blog/">Lennart Poettering’s</a> blog which has lots of information about <code class="language-plaintext highlighter-rouge">systemd</code></li>
   <li>Debian packaged bela customizations.</li>
@@ -29,5 +30,27 @@
 </ul>
 
 <h4 id="upcoming-targets"><strong>Upcoming Targets</strong></h4>
+<ul>
+  <li>Debian package updated/packaged.
+    <ul>
+      <li>hvcc</li>
+      <li>prudebug</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2 package/week (taking a comfortable room, if some package needs more work).</p>
+
+<ul>
+  <li>Build a bela-bullseye Image with all the changes made in upstream repo (omap-image-builder) by Aug 5 and after build test the Image and debug if it needs.</li>
+  <li>Make some more Bela specific changes in omap-image-builder scripts and also to make sure Bela Image Development follows the workflow of omap-image builder build process.
+    <ul>
+      <li>bela_gadget files</li>
+      <li>systemd configuration</li>
+      <li>Installing Bela, bela kernel, Building kernel module (rtdm_pruss_irq), Setting-up clang</li>
+      <li>boot/drivers (BELABOOT)</li>
+    </ul>
+  </li>
+</ul>
 
 :ET

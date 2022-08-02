@@ -9,7 +9,7 @@ nav_order: 8
 July 25 - July 31
 
 ---
-- Had weekly meeting with Giulio Moro on Monday, 25 June, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet [check here](https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week7)
+- Had weekly meeting with Giulio Moro on Monday, 25 July, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet [check here](https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week7)
 - Currently, bela-image-builder ships [hvcc](https://github.com/giuliomoro/hvcc) (heavy hvcc compiler) that has `python2` dependencies of `pip2`, `enum`, `jinja2` and Debian 11 (bullseye) has removed the " `python` package and the `/usr/bin/python` symlink due to the deprecation of Python 2.. though it has minimal support for python 2.7 adjusted everything for `python3-<package name>` ( updated python3 version of [hvcc](https://github.com/Wasted-Audio/hvcc/) and added dependency package `tox` in bela-bullseye conf ) and also removed `enum` package that no more it required.
 - Looked at how [bela-gadget](https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh) is different with compared to bb-usb-gadget (what that does and what file it uses) and whether it can be 'inject' some of bela changes init.
 - bb-usb-gadget, takes over anything to do with usb gadget loading.. and it has a systemd script which didn't exist in prior then bullseye ([https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-usb-gadgets.bb-usb-gadgets.service](https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-usb-gadgets.bb-usb-gadgets.service))
