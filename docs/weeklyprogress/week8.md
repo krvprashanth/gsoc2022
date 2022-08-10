@@ -5,7 +5,7 @@ parent: Weekly Progress
 nav_order: 8
 ---
 ---
-# Week 7
+# Week 8
 August 1 - August 7
 
 ---
