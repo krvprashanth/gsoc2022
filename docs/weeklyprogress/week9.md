@@ -1,3 +1,10 @@
+---
+layout: default
+title: Week 9
+parent: Weekly Progress
+nav_order: 9
+---
+---
 # Week 9
 August 8 - August 14
 
