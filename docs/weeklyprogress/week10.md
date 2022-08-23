@@ -29,4 +29,16 @@ August 15 - August 21
 - Unable to install rtdm_pruss_irq need to understand clearly about the linux kernel headers that it required.
 
 #### **Upcoming Targets**
-- Update upcoming targets once discussing in the weekly meet.
+- Make a new debian package that provide all these deb files with the appropriate branch from this repo https://github.com/RobertCNelson/ti-linux-kernel-dev builds:
+     - *linux-image*deb
+     - *linux*headers*deb
+     - *linux*firmware*deb
+     
+need both built the bela_defconfig from bela-image-builder
+
+- Xenomai repo (which contains libcobalt and the rtdm headers) _can_ be built as a Debian package: it contains a debian/ folder. 
+TASK: build this as a package and make it available the usual way
+- Build a Bela Image with all these changes made in and after build test the Image and debug if it needs.
+
+
+

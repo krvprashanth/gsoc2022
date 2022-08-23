@@ -162,10 +162,10 @@
     "relUrl": "/docs/weeklyprogress/week1/"
   },"27": {
     "doc": "Week 10",
-    "title": "Week 9",
-    "content": "August 15 - August 21 . | Worked on bela boot. | Built a bela-bullseye Image with all the changes made till date in omap-image-builder (upstream repo) | And, asked Giulio Moro, Dhruva Gole to test the bela-bullseye-image on board to get feedback and make changes upon it. | Bela Images - http://gfnd.rcn-ee.org:33044/workspace/bela-images/ | Added /etc/ssh/sshd_config.d/allow-unsecure.conf file in bela customizations | Enabled Bela systemctl services | Debugging the built image as boot partition is missing. | Started working on rtdm_pruss_irq. | . Accomplishments . | bela boot [PR #208] | Built bela-bullseye image and also flash and booted the Image | . Blockers . | Unable to install rtdm_pruss_irq need to understand clearly about the linux kernel headers that it required. | . Upcoming Targets . | Update upcoming targets once discussing in the weekly meet. | . ",
-    "url": "http://localhost:4000/docs/weeklyprogress/week10/#week-9",
-    "relUrl": "/docs/weeklyprogress/week10/#week-9"
+    "title": "Week 10",
+    "content": "August 15 - August 21 . | Worked on bela boot. | Built a bela-bullseye Image with all the changes made till date in omap-image-builder (upstream repo) | And, asked Giulio Moro, Dhruva Gole to test the bela-bullseye-image on board to get feedback and make changes upon it. | Bela Images - http://gfnd.rcn-ee.org:33044/workspace/bela-images/ | Added /etc/ssh/sshd_config.d/allow-unsecure.conf file in bela customizations | Enabled Bela systemctl services | Debugging the built image as boot partition is missing. | Started working on rtdm_pruss_irq. | . Accomplishments . | bela boot [PR #208] | Built bela-bullseye image and also flash and booted the Image | . Blockers . | Unable to install rtdm_pruss_irq need to understand clearly about the linux kernel headers that it required. | . Upcoming Targets . | Make a new debian package that provide all these deb files with the appropriate branch from this repo https://github.com/RobertCNelson/ti-linux-kernel-dev builds: . | linux-imagedeb | linuxheaders*deb | linuxfirmware*deb | . | . need both built the bela_defconfig from bela-image-builder . | Xenomai repo (which contains libcobalt and the rtdm headers) can be built as a Debian package: it contains a debian/ folder. TASK: build this as a package and make it available the usual way | Build a Bela Image with all these changes made in and after build test the Image and debug if it needs. | . ",
+    "url": "http://localhost:4000/docs/weeklyprogress/week10/#week-10",
+    "relUrl": "/docs/weeklyprogress/week10/#week-10"
   },"28": {
     "doc": "Week 10",
     "title": "Week 10",
