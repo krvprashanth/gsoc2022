@@ -1,12 +1,13 @@
-I"Ê<hr />
+I"<hr />
 <h1 id="week-10">Week 10</h1>
 <p>August 15 - August 21</p>
 
 <hr />
 <ul>
+  <li>Attended GSoC Allyship and Inclusion Workshop for Contributors.</li>
   <li>Worked on  bela boot.</li>
   <li>Built a bela-bullseye Image with all the changes made till date in omap-image-builder (upstream repo)</li>
-  <li>And, asked Giulio Moro, Dhruva Gole to test the bela-bullseye-image on board to get feedback and make changes upon it.</li>
+  <li>And, asked Giulio Moro and Dhruva Gole to test the bela-bullseye-image on board to get feedback and make changes upon it.</li>
   <li>Bela Images - <a href="http://gfnd.rcn-ee.org:33044/workspace/bela-images/">http://gfnd.rcn-ee.org:33044/workspace/bela-images/</a></li>
   <li>Added /etc/ssh/sshd_config.d/allow-unsecure.conf file in bela customizations</li>
   <li>Enabled Bela systemctl services</li>

@@ -9,9 +9,10 @@ nav_order: 10
 August 15 - August 21
 
 ---
+- Attended GSoC Allyship and Inclusion Workshop for Contributors.
 - Worked on  bela boot.
 - Built a bela-bullseye Image with all the changes made till date in omap-image-builder (upstream repo)
-- And, asked Giulio Moro, Dhruva Gole to test the bela-bullseye-image on board to get feedback and make changes upon it.
+- And, asked Giulio Moro and Dhruva Gole to test the bela-bullseye-image on board to get feedback and make changes upon it.
 - Bela Images - [http://gfnd.rcn-ee.org:33044/workspace/bela-images/](http://gfnd.rcn-ee.org:33044/workspace/bela-images/)
 - Added /etc/ssh/sshd_config.d/allow-unsecure.conf file in bela customizations
 - Enabled Bela systemctl services
