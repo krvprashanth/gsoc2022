@@ -1,0 +1,89 @@
+I"Þ<hr />
+<h1 id="week-10">Week 10</h1>
+<p>August 22 - August 28</p>
+
+<hr />
+<ul>
+  <li>Had weekly meeting with Giulio Moro, Dhruva Gole on Monday, 22 August, 4:30 pm CEST ( 8:00 IST ) and for minutes of meet <a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!#week11">check here</a></li>
+  <li>Started working on debian packaging ti-linux-xenomai-4.14.y kernel branch with bela configured config from <a href="https://github.com/RobertCNelson/ti-linux-kernel-dev">https://github.com/RobertCNelson/ti-linux-kernel-dev</a> builds</li>
+  <li>ti-linux-xenomai-bela-4.14.y branch was forked from ti-linux-xenomai-4.14.y to build the ti-linux-xenomai-4.14.y kernel debian package for bela images with belaâ€™s config and initialized bela_deconfig from bela-image-builder/kernel and overwritten patches/deconfig.</li>
+</ul>
+
+<p><strong>The build results in the following packages:</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>linux-image-4.14.108-ti-xenomai-bela-r2</td>
+      <td>linux-image*deb</td>
+    </tr>
+    <tr>
+      <td>linux-headers-4.14.108-ti-xenomai-bela-r2</td>
+      <td>linux-headers*deb</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Debian packaged Xenomai repo (which contains libcobalt and the rtdm headers) and also it contains a debian packages configuration and rebuilt it v3.0.13 and made it available the usual way as it was.</li>
+</ul>
+
+<p><strong>The build results in the following packages:</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>xenomai-v3.0-runtime</td>
+      <td>Xenomai runtime utilities</td>
+    </tr>
+    <tr>
+      <td>libxenomai1-v3.0</td>
+      <td>Shared libraries for Xenomai</td>
+    </tr>
+    <tr>
+      <td>libxenomai-v3.0-dev</td>
+      <td>Headers and static libraries for Xenomai</td>
+    </tr>
+    <tr>
+      <td>xenomai-v3.0-kernel-source</td>
+      <td>Sources of the Xenomai 2.x kernel</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h4 id="accomplishments"><strong>Accomplishments</strong></h4>
+
+<ul>
+  <li>source to build the ti-linux-xenomai-4.14.y kernel debian package with bela configured config <a href="https://github.com/RobertCNelson/ti-linux-kernel-dev/pull/53">[PR #53]</a></li>
+  <li>Add xenomai (stable/v3.0.x) debian packages configuration <a href="https://github.com/rcn-ee/repos/pull/63">PR #63</a></li>
+  <li>some more bela specific changes <a href="https://github.com/RobertCNelson/omap-image-builder/pull/209">[PR #209]</a></li>
+  <li>Built a Bela Image with all these changes made and also flash and booted the Image on board.</li>
+</ul>
+
+<h4 id="blockers"><strong>Blockers</strong></h4>
+<ul>
+  <li>Unable to install rtdm_pruss_irq need to understand clearly about the linux kernel headers that it required.</li>
+</ul>
+
+<h4 id="upcoming-targets"><strong>Upcoming Targets</strong></h4>
+<ul>
+  <li>Make a new debian package that provide all these deb files with the appropriate branch from this repo https://github.com/RobertCNelson/ti-linux-kernel-dev builds:
+    <ul>
+      <li><em>linux-image</em>deb</li>
+      <li><em>linux</em>headers*deb</li>
+      <li><em>linux</em>firmware*deb</li>
+    </ul>
+  </li>
+</ul>
+
+<p>need both built the bela_defconfig from bela-image-builder</p>
+
+<ul>
+  <li>Xenomai repo (which contains libcobalt and the rtdm headers) <em>can</em> be built as a Debian package: it contains a debian/ folder. 
+TASK: build this as a package and make it available the usual way</li>
+  <li>Build a Bela Image with all these changes made in and after build test the Image and debug if it needs.</li>
+</ul>
+
+:ET
