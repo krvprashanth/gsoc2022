@@ -30,7 +30,7 @@ Debian Bullseye 11.4
 
        ./RootStock-NG.sh -c bela.io-debian-bullseye-v4.14-ti-xenomai-armhf
         
-Archive will be under './deploy/'
+Archive will be under `./deploy/`
 
 3. **Finalize**: Bela specific version:
 
