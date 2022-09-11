@@ -25,10 +25,6 @@ A typical workflow to build a Bela Image would look like:
        cd ./omap-image-builder
     
 2. **Generate**: Base Debian Images 
-
-  Debian Stretch 9.13
-
-       ./RootStock-NG.sh -c bela.io-debian-stretch-armhf-v4.14-ti-xenomai
        
 Debian Bullseye 11.4
 
@@ -38,7 +34,7 @@ Archive will be under './deploy/'
 
 3. **Finalize**: Bela specific version:
 
-       sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-enable-pru
+       sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-load-bela-overlay
     
 After the script finishes running, we will have an image file generated.
 

@@ -1,4 +1,4 @@
-I"†<hr />
+I"Œ<hr />
 <h1 id="building-bela-images">Building Bela Images</h1>
 
 <p>Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></p>
@@ -25,11 +25,6 @@ cd ./omap-image-builder
   </li>
 </ol>
 
-<p>Debian Stretch 9.13</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ./RootStock-NG.sh -c bela.io-debian-stretch-armhf-v4.14-ti-xenomai
-</code></pre></div></div>
-
 <p>Debian Bullseye 11.4</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ./RootStock-NG.sh -c bela.io-debian-bullseye-v4.14-ti-xenomai-armhf
@@ -41,7 +36,7 @@ cd ./omap-image-builder
   <li>
     <p><strong>Finalize</strong>: Bela specific version:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-uboot-enable-pru
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./setup_sdcard.sh --img-4gb bela-example --dtb beaglebone --distro-bootloader --enable-load-bela-overlay
 </code></pre></div>    </div>
   </li>
 </ol>
