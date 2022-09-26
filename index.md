@@ -41,8 +41,6 @@ Bela is an open hardware hardware and software platform for creating beautiful i
 
 Bela Platform uses the Bela software which is a customised Debian distribution including a custom xenomai kernel, minimal clutter, and custom systemd configurations and It takes advantage of features of the BeagleBone computers and can achieve extremely fast audio and sensor processing times. 
 
-This project is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo. 
-
 ### **Why Bela Image has been built again?** <a name="rebuild"></a>
 
 The Bela Image development repo is heavily based and which was initially inspired by Beagleboard Image-builder scripts. Currently, the Beagle board Image development repo diverged greatly from a common functionalities of building Images.
