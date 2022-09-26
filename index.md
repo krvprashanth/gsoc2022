@@ -25,13 +25,16 @@ The project idea was to Improve the maintainability of the Bela Image developmen
     - [Project Preview](#preview)
     - [Brief Overview of Bela Image](#overview)
 2. [Documentation](#docs)
+    - [Debian -- Packages](#debian-packages)
+    - [omap-image-builder](#omap)
+    - [Writings](#writings)
 3. [Contributions](#contribution)
     - [Achieved Milestones](#milestones)
     - [Git Repositories](#repos)
     - [Pull Requests](#pr)
-4. [Future Scope](#scope)
-5. [Benefit](#benefit)
-6. [Additional Links](#ref)
+4. [Further Implementation](#scope)
+5. [Conclusion](#conclusion)
+6. [Helpful Links](#ref)
 
 ---
 
@@ -52,6 +55,8 @@ Now, after the specific changes the Bela Image development is following more clo
 ### **Project Preview** <a name="preview"></a> 
 
 The main goal is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo.
+
+**Note**: *This project isn't rewrite omap-image-builder with bela changes, it's merge bela changes into omap-image-builder*.
 
 Bela Image builds with [RobertCNelson/omap-image-builder scripts](https://github.com/RobertCNelson/omap-image-builder), These are the same build scripts that were used to generate the official BeagleBoard Images, found here: [https://beagleboard.org/latest-images](https://beagleboard.org/latest-images)
 
@@ -91,14 +96,39 @@ After the script finishes running, we will have an image file generated.
 - Loads Bela IDE over browser, `bela.local`
 
 
+TODO (elaborate)
+
 ---
 ## **Documentation** <a name="docs"></a> 
 
-### **Bela Core**
+### **Debian -- Packages**
+
+##### **Introductory notes**
+Debian package updated/packaged the dependencies of Bela and pushed to apt packager manager at [https://rcn-ee.com](https://rcn-ee.com) that used in omap-image-builder along with mainline Debian apt package manager.
+
+Debian 11: (bullseye): [http://repos.rcn-ee.com/debian/](http://repos.rcn-ee.com/debian/)
+
+    deb [arch=armhf] http://repos.rcn-ee.com/debian/ bullseye main
+    #deb-src [arch=armhf] http://repos.rcn-ee.com/debian/ bullseye main
+
+
+##### **Package lists**
+These are the Bela required packages that are up in [https://rcn-ee.com](https://rcn-ee.com)
+
+| ---   | ---  |
+| bela-customizations | Bela customizations |
+| bela-seasocks | Simple, small, C++ embeddable webserver with WebSockets support |
+| hvcc | hvcc compiler for Pure Data patches - python3 |
+| libxenomai1-v3.0 | Shared libraries for Xenomai |
+| libxenomai-v3.0-dev |  Headers and static libraries for Xenomai |
+| linux-image-4.14.108-ti-xenomai-bela-r2 | linux-image*deb |
+| linux-headers-4.14.108-ti-xenomai-bela-r2 | linux-headers*deb |
+| xenomai-v3.0-kernel-source | Sources of the Xenomai 2.x kernel |
+| xenomai-v3.0-runtime	 | Xenomai runtime utilities |
+
+### **omap-image-builder**
 
 ##### **Enable and Load Custom Device Tree Overlay**
-
----
 
 In  [omap-image-builder/tools/setup_sdcard.sh](https://github.com/RobertCNelson/omap-image-builder/blob/master/tools/setup_sdcard.sh) 
  
@@ -117,17 +147,27 @@ Load With: [https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8
 		load_custom_overlay="enable"
 		;;
 
+##### **Populating rootfs and Boot Partition**
+TODO
 
-And, also I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.
+
+### **Writings**
+I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.
 
  [**Weekly Progress**](https://krvprashanth.in/gsoc2022/docs/weeklyprogress/)
+
+ **How-To Guides**
+ ( TODO )
+
+ **Project Notes**
+ ( TODO )
 
 
 ---
 ## **Contributions** <a name="contribution"></a>
 
 ### **Achieved Milestones** <a name="milestones"></a> 
-
+TODO
 ### **Git Repositories** <a name="repos"></a> 
 
 Common software that is on or used for building bela image.
@@ -171,12 +211,16 @@ In the following table, I present the pull requests (PRs) I created during the G
 
 
 ---
-### **Benefit** 
+## **Further Implementation** 
+TODO
+
 ---
-This project adds support for the Bela Image development to make Bela Image follow more closely with BeagleBoard Images. I mean after Bela specific changes made conditional to the Image-builder repository. The Bela Image development will be updated more often, more easily in parallel with BeagleBoard Images.
+## **Conclusion**
+TODO
+
+---
 
 ## **Helpful Links**
----
 - [Original GSoC Project idea](https://elinux.org/BeagleBoard/GSoC/Ideas-2022)
 - [https://github.com/BelaPlatform](https://github.com/BelaPlatform)
 - [https://bela.io](https://bela.io)

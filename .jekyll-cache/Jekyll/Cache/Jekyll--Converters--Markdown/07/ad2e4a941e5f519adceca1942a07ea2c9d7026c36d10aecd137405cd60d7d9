@@ -1,4 +1,4 @@
-I"	4<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"�;<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoC’2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -45,8 +45,6 @@
 
 <p>Bela Platform uses the Bela software which is a customised Debian distribution including a custom xenomai kernel, minimal clutter, and custom systemd configurations and It takes advantage of features of the BeagleBone computers and can achieve extremely fast audio and sensor processing times.</p>
 
-<p>This project is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo.</p>
-
 <h3 id="why-bela-image-has-been-built-again-"><strong>Why Bela Image has been built again?</strong> <a name="rebuild"></a></h3>
 
 <p>The Bela Image development repo is heavily based and which was initially inspired by Beagleboard Image-builder scripts. Currently, the Beagle board Image development repo diverged greatly from a common functionalities of building Images.</p>
@@ -58,6 +56,8 @@
 <h3 id="project-preview-"><strong>Project Preview</strong> <a name="preview"></a></h3>
 
 <p>The main goal is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo.</p>
+
+<p><strong>Note</strong>: <em>This project isn’t rewrite omap-image-builder with bela changes, it’s merge bela changes into omap-image-builder</em>.</p>
 
 <p>Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a>, These are the same build scripts that were used to generate the official BeagleBoard Images, found here: <a href="https://beagleboard.org/latest-images">https://beagleboard.org/latest-images</a></p>
 
@@ -111,7 +111,62 @@
 <hr />
 <h2 id="documentation-"><strong>Documentation</strong> <a name="docs"></a></h2>
 
-<h3 id="bela-core"><strong>Bela Core</strong></h3>
+<h3 id="debian--packages"><strong>Debian – Packages</strong></h3>
+
+<h5 id="introductory-notes"><strong>Introductory notes</strong></h5>
+<p>Debian package updated/packaged the dependencies of Bela and pushed to apt packager manager at <a href="https://rcn-ee.com">https://rcn-ee.com</a> that used in omap-image-builder along with mainline Debian apt package manager.</p>
+
+<p>Debian 11: (bullseye): <a href="http://repos.rcn-ee.com/debian/">http://repos.rcn-ee.com/debian/</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb [arch=armhf] http://repos.rcn-ee.com/debian/ bullseye main
+#deb-src [arch=armhf] http://repos.rcn-ee.com/debian/ bullseye main
+</code></pre></div></div>
+
+<h5 id="package-lists"><strong>Package lists</strong></h5>
+<p>These are the Bela required packages that are up in <a href="https://rcn-ee.com">https://rcn-ee.com</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>bela-customizations</td>
+      <td>Bela customizations</td>
+    </tr>
+    <tr>
+      <td>bela-seasocks</td>
+      <td>Simple, small, C++ embeddable webserver with WebSockets support</td>
+    </tr>
+    <tr>
+      <td>hvcc</td>
+      <td>hvcc compiler for Pure Data patches - python3</td>
+    </tr>
+    <tr>
+      <td>libxenomai1-v3.0</td>
+      <td>Shared libraries for Xenomai</td>
+    </tr>
+    <tr>
+      <td>libxenomai-v3.0-dev</td>
+      <td>Headers and static libraries for Xenomai</td>
+    </tr>
+    <tr>
+      <td>linux-image-4.14.108-ti-xenomai-bela-r2</td>
+      <td>linux-image*deb</td>
+    </tr>
+    <tr>
+      <td>linux-headers-4.14.108-ti-xenomai-bela-r2</td>
+      <td>linux-headers*deb</td>
+    </tr>
+    <tr>
+      <td>xenomai-v3.0-kernel-source</td>
+      <td>Sources of the Xenomai 2.x kernel</td>
+    </tr>
+    <tr>
+      <td>xenomai-v3.0-runtime</td>
+      <td>Xenomai runtime utilities</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="omap-image-builder"><strong>omap-image-builder</strong></h3>
 
 <h5 id="enable-and-load-custom-device-tree-overlay"><strong>Enable and Load Custom Device Tree Overlay</strong></h5>
 
@@ -120,11 +175,11 @@
 <p>Just tweak it here: <a href="https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8c275dc665012efef06141400c5846/tools/setup_sdcard.sh#L1289">https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8c275dc665012efef06141400c5846/tools/setup_sdcard.sh#L1289</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ###Todo: make this more generic so you can specify any overlay...
-if [ "x${load_custom_overlay}" = "xenable" ] ; then
-     echo "###" &gt;&gt; ${wfile}
-     echo "dtb_overlay=PB-HACKADAY-2021.dtbo" &gt;&gt; ${wfile}
-     echo "" &gt;&gt; ${wfile}
-fi
+       if [ "x${load_custom_overlay}" = "xenable" ] ; then
+              echo "###" &gt;&gt; ${wfile}
+              echo "dtb_overlay=PB-HACKADAY-2021.dtbo" &gt;&gt; ${wfile}
+               echo "" &gt;&gt; ${wfile}
+       fi
 </code></pre></div></div>
 
 <p>Load With: <a href="https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8c275dc665012efef06141400c5846/tools/setup_sdcard.sh#L2102">https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8c275dc665012efef06141400c5846/tools/setup_sdcard.sh#L2102</a></p>
@@ -134,7 +189,7 @@ fi
 	;;
 </code></pre></div></div>
 
-<p>I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.</p>
+<p>And, also I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.</p>
 
 <p><a href="https://krvprashanth.in/gsoc2022/docs/weeklyprogress/"><strong>Weekly Progress</strong></a></p>
 

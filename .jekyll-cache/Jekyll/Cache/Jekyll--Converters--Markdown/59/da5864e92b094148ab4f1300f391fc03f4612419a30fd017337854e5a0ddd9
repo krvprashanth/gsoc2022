@@ -1,4 +1,4 @@
-I"34<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"85<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoC’2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -45,8 +45,6 @@
 
 <p>Bela Platform uses the Bela software which is a customised Debian distribution including a custom xenomai kernel, minimal clutter, and custom systemd configurations and It takes advantage of features of the BeagleBone computers and can achieve extremely fast audio and sensor processing times.</p>
 
-<p>This project is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo.</p>
-
 <h3 id="why-bela-image-has-been-built-again-"><strong>Why Bela Image has been built again?</strong> <a name="rebuild"></a></h3>
 
 <p>The Bela Image development repo is heavily based and which was initially inspired by Beagleboard Image-builder scripts. Currently, the Beagle board Image development repo diverged greatly from a common functionalities of building Images.</p>
@@ -58,6 +56,8 @@
 <h3 id="project-preview-"><strong>Project Preview</strong> <a name="preview"></a></h3>
 
 <p>The main goal is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo.</p>
+
+<p><strong>Note</strong>: <em>This project isn’t rewrite omap-image-builder with bela changes, it’s merge bela changes into omap-image-builder</em>.</p>
 
 <p>Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a>, These are the same build scripts that were used to generate the official BeagleBoard Images, found here: <a href="https://beagleboard.org/latest-images">https://beagleboard.org/latest-images</a></p>
 
@@ -111,9 +111,14 @@
 <hr />
 <h2 id="documentation-"><strong>Documentation</strong> <a name="docs"></a></h2>
 
+<h3 id="debian--packages"><strong>Debian – Packages</strong></h3>
+<p>Debian package updated/packaged the dependencies of Bela and pushed to apt packager manager at https://rcn-ee.com that used in omap-image-builder along with mainline Debian apt package manager.</p>
+
 <h3 id="bela-core"><strong>Bela Core</strong></h3>
 
 <h5 id="enable-and-load-custom-device-tree-overlay"><strong>Enable and Load Custom Device Tree Overlay</strong></h5>
+
+<hr />
 
 <p>In  <a href="https://github.com/RobertCNelson/omap-image-builder/blob/master/tools/setup_sdcard.sh">omap-image-builder/tools/setup_sdcard.sh</a></p>
 
@@ -134,7 +139,7 @@
 	;;
 </code></pre></div></div>
 
-<p>I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.</p>
+<p>And, also I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.</p>
 
 <p><a href="https://krvprashanth.in/gsoc2022/docs/weeklyprogress/"><strong>Weekly Progress</strong></a></p>
 
