@@ -1,5 +1,6 @@
-I"·<h1 id="contacts">Contacts</h1>
+I"<h1 id="contacts">Contacts</h1>
 <hr />
+<p>Feel free to get in touch</p>
 
 <table>
   <tbody>
@@ -7,13 +8,13 @@
       <td><strong>Email ID:</strong> krvprashanth@riseup.net</td>
     </tr>
     <tr>
-      <td><strong>Number:</strong> 7993780016</td>
-    </tr>
-    <tr>
       <td><strong><a href="http://bbb.io/gsocchat">BeagleBoard Slack</a>:</strong> @krvprashanth</td>
     </tr>
     <tr>
       <td><strong>Matrix:</strong> @krvprashanth:matrix.org</td>
+    </tr>
+    <tr>
+      <td><strong>Telegram:</strong> <a href="https://t.me/krvprashanth">https://t.me/krvprashanth</a></td>
     </tr>
   </tbody>
 </table>

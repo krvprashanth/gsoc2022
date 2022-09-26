@@ -8,10 +8,11 @@ nav_order: 5
 
 # Contacts
 ---
+Feel free to get in touch 
 
 | **Email ID:** krvprashanth@riseup.net | 
-| **Number:** 7993780016 |
 | **[BeagleBoard Slack](http://bbb.io/gsocchat):** @krvprashanth |
 | **Matrix:** @krvprashanth:matrix.org |
+| **Telegram:** [https://t.me/krvprashanth](https://t.me/krvprashanth) |
 
 

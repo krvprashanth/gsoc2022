@@ -1,4 +1,4 @@
-I"Œ<hr />
+I"À<hr />
 <h1 id="building-bela-images">Building Bela Images</h1>
 
 <p>Bela Image builds with <a href="https://github.com/RobertCNelson/omap-image-builder">RobertCNelson/omap-image-builder scripts</a></p>
@@ -30,7 +30,7 @@ cd ./omap-image-builder
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ./RootStock-NG.sh -c bela.io-debian-bullseye-v4.14-ti-xenomai-armhf
 </code></pre></div></div>
 
-<p>Archive will be under â€˜./deploy/â€™</p>
+<p>Archive will be under <code class="language-plaintext highlighter-rouge">./deploy/</code></p>
 
 <ol>
   <li>
