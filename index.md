@@ -27,6 +27,7 @@ The project idea was to Improve the maintainability of the Bela Image developmen
 2. [Documentation](#docs)
     - [Debian -- Packages](#debian-packages)
     - [omap-image-builder](#omap)
+    - [Bela Software](#belasoftware)
     - [Writings](#writings)
 3. [Contributions](#contribution)
     - [Achieved Milestones](#milestones)
@@ -73,7 +74,7 @@ A typical workflow to build a Bela Image would look like:
        git clone https://github.com/RobertCNelson/omap-image-builder
        cd ./omap-image-builder
     
-- **Generate**: Base Debian Images 
+- **Generate**: Debian root file system 
        
 Debian Bullseye 11.5
 
@@ -128,6 +129,12 @@ These are the Bela required packages that are up in [https://rcn-ee.com](https:/
 
 ### **omap-image-builder**
 
+##### **Bootloader: U-Boot**
+TODO
+
+##### **U-Boot /boot/uEnv.txt configuration**
+TODO
+
 ##### **Enable and Load Custom Device Tree Overlay**
 
 In  [omap-image-builder/tools/setup_sdcard.sh](https://github.com/RobertCNelson/omap-image-builder/blob/master/tools/setup_sdcard.sh) 
@@ -150,6 +157,8 @@ Load With: [https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8
 ##### **Populating rootfs and Boot Partition**
 TODO
 
+### **Bela Software**
+TODO
 
 ### **Writings**
 I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.
@@ -161,6 +170,10 @@ I maintained weekly log my progress throughout the program. For the most part it
 
  **Project Notes**
  ( TODO )
+
+ **Weekly Meeting Minutes**
+  ( TODO )
+
 
 
 ---
