@@ -41,7 +41,7 @@ The project idea was to Improve the maintainability of the Bela Image developmen
 
 ## **Introduction** <a name="intro"></a>
 
-Bela is an open hardware hardware and software platform for creating beautiful interaction with sensors, sound and it is designed for artists, musicians, researchers and makers, Bela brings the power of ultra-low latency interactive audio and sensors to digital systems.
+Bela is an open hardware and software platform for creating beautiful interaction with sensors, sound and it is designed for artists, musicians, researchers and makers, Bela brings the power of ultra-low latency interactive audio and sensors to digital systems.
 
 Bela Platform uses the Bela software which is a customised Debian distribution including a custom xenomai kernel, minimal clutter, and custom systemd configurations and It takes advantage of features of the BeagleBone computers and can achieve extremely fast audio and sensor processing times. 
 
@@ -266,7 +266,10 @@ I maintained weekly log my progress throughout the program. For the most part it
 ## **Contributions** <a name="contribution"></a>
 
 ### **Achieved Milestones** <a name="milestones"></a> 
-TODO
+- Debian package updated/packaged Bela dependencies
+- Packages are up in https://rcn-ee.com apt package manager and https://github.com/rcn-ee/repos
+- Built Bela Image with Beaglebone image-builder scripts
+- From now the Bela Image will be updated more often with BeagleBone Images
 ### **Git Repositories** <a name="repos"></a> 
 
 Common software that is on or used for building bela image.
