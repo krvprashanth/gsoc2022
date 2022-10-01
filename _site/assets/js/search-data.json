@@ -127,7 +127,7 @@
   },"21": {
     "doc": "Home",
     "title": "Further Implementation",
-    "content": "TODO . ",
+    "content": ". | Evaluate and Optimise boot times | Debian Package remaining Bela Core . | rtdm_pruss_irq | Bela IDE | prudebug | . | Improvise bela-customizations package. | . ",
     "url": "http://localhost:4000/#further-implementation",
     "relUrl": "/#further-implementation"
   },"22": {

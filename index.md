@@ -311,7 +311,12 @@ In the following table, I present the pull requests (PRs) I created during the G
 
 ---
 ## **Further Implementation** 
-TODO
+- Evaluate and Optimise boot times
+- Debian Package remaining Bela Core
+    - rtdm_pruss_irq
+    - Bela IDE
+    - prudebug
+- Improvise bela-customizations package.
 
 ---
 ## **Conclusion**

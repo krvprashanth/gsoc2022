@@ -1,4 +1,4 @@
-I"c`<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"Ra<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoC’2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -427,7 +427,17 @@ ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
 
 <hr />
 <h2 id="further-implementation"><strong>Further Implementation</strong></h2>
-<p>TODO</p>
+<ul>
+  <li>Evaluate and Optimise boot times</li>
+  <li>Debian Package remaining Bela Core
+    <ul>
+      <li>rtdm_pruss_irq</li>
+      <li>Bela IDE</li>
+      <li>prudebug</li>
+    </ul>
+  </li>
+  <li>Improvise bela-customizations package.</li>
+</ul>
 
 <hr />
 <h2 id="conclusion"><strong>Conclusion</strong></h2>
