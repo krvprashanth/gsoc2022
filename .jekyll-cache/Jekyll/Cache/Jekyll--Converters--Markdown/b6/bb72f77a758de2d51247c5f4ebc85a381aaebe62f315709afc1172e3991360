@@ -1,4 +1,4 @@
-I"�B<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"�U<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoC’2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -113,9 +113,8 @@
   <li>Root login over ssh is enabled.</li>
   <li>The hostname is set to the name of board it’s for as Bela</li>
   <li>Loads Bela IDE over browser, <code class="language-plaintext highlighter-rouge">bela.local</code></li>
+  <li>Uses Robert Nelson’s Beaglebone image-builder scripts to build image.</li>
 </ul>
-
-<p>TODO (elaborate)</p>
 
 <hr />
 <h2 id="documentation-"><strong>Documentation</strong> <a name="docs"></a></h2>
@@ -209,12 +208,29 @@
 
 <h3 id="bela-software"><strong>Bela Software</strong></h3>
 
-<p>bela customizations</p>
+<h5 id="bela-core"><strong>Bela Core</strong></h5>
 
-<p>Initialized a repo for bela-customizations and copied the /misc/rootfs of bela-image-builder repo ( https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs ) in it and used this repo as source for packaging.</p>
+<p><code class="language-plaintext highlighter-rouge">seasocks</code>, <code class="language-plaintext highlighter-rouge">am335x_pru_package</code>, <code class="language-plaintext highlighter-rouge">Bela IDE</code>, <code class="language-plaintext highlighter-rouge">prudebug</code>, <code class="language-plaintext highlighter-rouge">rtdm_pruss_irq</code>, <code class="language-plaintext highlighter-rouge">hvcc</code> are installed through <a href="https://github.com/RobertCNelson/omap-image-builder/blob/master/target/chroot/bela.io-bullseye.sh">/target/chroot/bela.io-bullseye.sh</a> script and <code class="language-plaintext highlighter-rouge">custom xenomai kernel</code> and all other <code class="language-plaintext highlighter-rouge">Bela required packages</code> are installed through <a href="/configs/bela.io-debian-bullseye-v4.14-ti-xenomai-armhf.conf">/configs/bela.io-debian-bullseye-v4.14-ti-xenomai-armhf.conf</a></p>
 
-<p><strong>Changes that need to be done</strong></p>
+<h5 id="bela-customizations"><strong>Bela Customizations</strong></h5>
+<p>The <code class="language-plaintext highlighter-rouge">bela-customizations</code> debian package ships these (<a href="https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs">https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs</a>) files as it is to bela image.</p>
 
+<p>Initialized a repo for bela-customizations and copied the /misc/rootfs of bela-image-builder repo in it and used this repo as source for packaging.</p>
+
+<h6 id="removed"><strong>Removed</strong></h6>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dhcp.conf</code> cause bela-customizations package failed to install due to ‘/etc/dhcp/dhcpd.conf’, which is also in package isc-dhcp-server and better file, this has dhcp enabled…, that exact same setup is done thru systemd-network.. with: bb-usb-gadget package… <a href="https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network">https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network</a></li>
+  <li><code class="language-plaintext highlighter-rouge">securetty</code> In Debian Bullseye, the runtime that use to use etc/securetty no longer uses that file.. it was completely removed as a legacy option.. Reference: <a href="https://www.debian.org/lts/security/2021/dla-2596">https://www.debian.org/lts/security/2021/dla-2596</a></li>
+  <li><code class="language-plaintext highlighter-rouge">fstab</code>, <code class="language-plaintext highlighter-rouge">hosts</code> these files are generated when we run setup_sdcard.sh of omap-image-builder</li>
+  <li><code class="language-plaintext highlighter-rouge">interfaces</code> systemd-network uses a new inteface..</li>
+  <li><code class="language-plaintext highlighter-rouge">wpa_supplicant.conf</code> will find it already pre-installed..</li>
+</ul>
+
+<h4 id="changes-that-need-to-be-done"><strong>Changes that need to be done</strong></h4>
+
+<h6 id="bela-bootloader"><strong>Bela Bootloader</strong></h6>
+<hr />
 <p>This still need to be converted…  <a href="https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/bela_bootloader.sh#L99-L102">bela_bootloader.sh</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> echo "log: dd if=/mnt/boot/MLO of=${DEVICE} seek=${dd_spl_uboot_seek} bs=${dd_spl_uboot_bs}"
@@ -223,23 +239,44 @@
  dd if=/mnt/boot/u-boot.img of=${DEVICE} seek=${dd_uboot_seek} bs=${dd_uboot_bs}
 </code></pre></div></div>
 
-<p>This should just call…
-     /opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk1.sh
-and depend on debian package bb-u-boot-am335x-evm</p>
+<p>This should just call and depend on debian package bb-u-boot-am335x-evm</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk1.sh
+</code></pre></div></div>
+
+<h6 id="dhcp--etcdhcpdhcpdconf"><strong>DHCP  /etc/dhcp/dhcpd.conf</strong></h6>
+<hr />
+<p>Bela using dhcp to set usb0/usb1… <a href="https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/dhcpd.conf#L40-L46">https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/dhcpd.conf#L40-L46</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    subnet 192.168.7.0 netmask 255.255.255.0 {
+        range 192.168.7.1;
+    }
+
+    subnet 192.168.6.0 netmask 255.255.255.0 {
+</code></pre></div></div>
+
+<p>In Bullsye, the exact same setup is done through systemd-network.. with: bb-usb-gadget package <a href="https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network">https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network</a></p>
+
+<h6 id="bela-gadget"><strong>Bela Gadget</strong></h6>
+<hr />
+<p>This should be tweaked <a href="https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh">https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh</a> in an option in: <a href="https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget">https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget</a> as it auto loads the gadget driver.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [Unit]
+    Description=BeagleBoard.org USB gadgets
+    After=usb-gadget.target
+    ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
+</code></pre></div></div>
 
 <h3 id="writings"><strong>Writings</strong></h3>
 <p>I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.</p>
 
 <p><a href="https://krvprashanth.in/gsoc2022/docs/weeklyprogress/"><strong>Weekly Progress</strong></a></p>
 
-<p><strong>How-To Guides</strong>
- ( TODO )</p>
+<p><a href="https://krvprashanth.in/gsoc2022/docs/documentation/how-to-guides/"><strong>How-To Guides</strong></a></p>
 
-<p><strong>Project Notes</strong>
- ( TODO )</p>
+<p><strong>Project Notes</strong></p>
 
-<p><strong>Weekly Meeting Minutes</strong>
-  ( TODO )</p>
+<p><a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!"><strong>Weekly Meeting Minutes</strong></a></p>
 
 <hr />
 <h2 id="contributions-"><strong>Contributions</strong> <a name="contribution"></a></h2>

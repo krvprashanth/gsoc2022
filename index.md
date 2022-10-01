@@ -95,9 +95,7 @@ After the script finishes running, we will have an image file generated.
 - Root login over ssh is enabled.
 - The hostname is set to the name of board it’s for as Bela
 - Loads Bela IDE over browser, `bela.local`
-
-
-TODO (elaborate)
+- Uses Robert Nelson's Beaglebone image-builder scripts to build image.
 
 ---
 ## **Documentation** <a name="docs"></a> 
@@ -130,10 +128,38 @@ These are the Bela required packages that are up in [https://rcn-ee.com](https:/
 ### **omap-image-builder**
 
 ##### **Bootloader: U-Boot**
-TODO
+
+Cape device tree overlays (src): [https://github.com/beagleboard/bb.org-overlays/](https://github.com/beagleboard/bb.org-overlays/)
+
+Debian package: bb-cape-overlays
+
+    uboot_overlay_addr0=/lib/firmware/<file0>.dtbo
+    uboot_overlay_addr1=/lib/firmware/<file1>.dtbo
+    uboot_overlay_addr2=/lib/firmware/<file2>.dtbo
+    uboot_overlay_addr3=/lib/firmware/<file3>.dtbo
+
+If for some reason we need to disable the auto-loading of any of ^ those, use the option that matches addrX: 
+
+    disable_uboot_overlay_addr0=1
+    disable_uboot_overlay_addr1=1
+    disable_uboot_overlay_addr2=1
+    disable_uboot_overlay_addr3=1
+
+4 more capes can be loaded via: 
+
+    uboot_overlay_addr4=/lib/firmware/<file4>.dtbo
+    uboot_overlay_addr5=/lib/firmware/<file5>.dtbo
+    uboot_overlay_addr6=/lib/firmware/<file6>.dtbo
+    uboot_overlay_addr7=/lib/firmware/<file7>.dtbo
+
+Plus one custom cape:
+
+    dtb_overlay=/lib/firmware/<file8>.dtbo  
+
 
 ##### **U-Boot /boot/uEnv.txt configuration**
-TODO
+/boot/uEnv.txt: 
+
 
 ##### **Enable and Load Custom Device Tree Overlay**
 
@@ -155,7 +181,8 @@ Load With: [https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8
 		;;
 
 ##### **Populating rootfs and Boot Partition**
-TODO
+###### **Boot Partition**
+###### **Rootfs Partition**
 
 ### **Bela Software**
 
