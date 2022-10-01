@@ -158,21 +158,74 @@ Load With: [https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8
 TODO
 
 ### **Bela Software**
-TODO
+
+##### **Bela Core**
+
+`seasocks`, `am335x_pru_package`, `Bela IDE`, `prudebug`, `rtdm_pruss_irq`, `hvcc` are installed through [/target/chroot/bela.io-bullseye.sh](https://github.com/RobertCNelson/omap-image-builder/blob/master/target/chroot/bela.io-bullseye.sh) script and `custom xenomai kernel` and all other `Bela required packages` are installed through [/configs/bela.io-debian-bullseye-v4.14-ti-xenomai-armhf.conf](/configs/bela.io-debian-bullseye-v4.14-ti-xenomai-armhf.conf)
+
+##### **Bela Customizations**
+The `bela-customizations` debian package ships these ([https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs](https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs)) files as it is to bela image.
+
+Initialized a repo for bela-customizations and copied the /misc/rootfs of bela-image-builder repo in it and used this repo as source for packaging.
+
+###### **Removed**
+
+- `dhcp.conf` cause bela-customizations package failed to install due to '/etc/dhcp/dhcpd.conf', which is also in package isc-dhcp-server and better file, this has dhcp enabled..., that exact same setup is done thru systemd-network.. with: bb-usb-gadget package... [https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network](https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network)
+- `securetty` In Debian Bullseye, the runtime that use to use etc/securetty no longer uses that file.. it was completely removed as a legacy option.. Reference: [https://www.debian.org/lts/security/2021/dla-2596](https://www.debian.org/lts/security/2021/dla-2596)
+- `fstab`, `hosts` these files are generated when we run setup_sdcard.sh of omap-image-builder
+- `interfaces` systemd-network uses a new inteface..
+- `wpa_supplicant.conf` will find it already pre-installed..
+
+
+#### **Changes that need to be done**
+
+###### **Bela Bootloader**
+---
+This still need to be converted...  [bela_bootloader.sh](https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/bela_bootloader.sh#L99-L102)
+
+
+     echo "log: dd if=/mnt/boot/MLO of=${DEVICE} seek=${dd_spl_uboot_seek} bs=${dd_spl_uboot_bs}"
+     dd if=/mnt/boot/MLO of=${DEVICE} seek=${dd_spl_uboot_seek} bs=${dd_spl_uboot_bs}
+     echo "log: dd if=/mnt/boot/u-boot.img of=${DEVICE} seek=${dd_uboot_seek} bs=${dd_uboot_bs}"
+     dd if=/mnt/boot/u-boot.img of=${DEVICE} seek=${dd_uboot_seek} bs=${dd_uboot_bs}
+
+This should just call and depend on debian package bb-u-boot-am335x-evm
+
+     /opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk1.sh
+
+###### **DHCP  /etc/dhcp/dhcpd.conf**
+---
+Bela using dhcp to set usb0/usb1... [https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/dhcpd.conf#L40-L46](https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/dhcpd.conf#L40-L46)
+
+        subnet 192.168.7.0 netmask 255.255.255.0 {
+            range 192.168.7.1;
+        }
+
+        subnet 192.168.6.0 netmask 255.255.255.0 {
+
+In Bullsye, the exact same setup is done through systemd-network.. with: bb-usb-gadget package [https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network](https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network)
+
+###### **Bela Gadget**
+---
+This should be tweaked [https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh](https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh) in an option in: [https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget](https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget) as it auto loads the gadget driver.
+
+        [Unit]
+        Description=BeagleBoard.org USB gadgets
+        After=usb-gadget.target
+        ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
+
 
 ### **Writings**
 I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.
 
  [**Weekly Progress**](https://krvprashanth.in/gsoc2022/docs/weeklyprogress/)
 
- **How-To Guides**
- ( TODO )
-
+ [**How-To Guides**](https://krvprashanth.in/gsoc2022/docs/documentation/how-to-guides/)
+ 
  **Project Notes**
- ( TODO )
-
- **Weekly Meeting Minutes**
-  ( TODO )
+ 
+ [**Weekly Meeting Minutes**](https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!)
+  
 
 
 

@@ -1,4 +1,4 @@
-I":><h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"MJ<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoC’2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -208,7 +208,50 @@
 <p>TODO</p>
 
 <h3 id="bela-software"><strong>Bela Software</strong></h3>
-<p>TODO</p>
+
+<p>bela customizations</p>
+
+<p>Initialized a repo for bela-customizations and copied the /misc/rootfs of bela-image-builder repo ( https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs ) in it and used this repo as source for packaging.</p>
+
+<p><strong>Changes that need to be done</strong></p>
+
+<h5 id="bela-bootloader"><strong>Bela Bootloader</strong></h5>
+
+<p>This still need to be converted…  <a href="https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/bela_bootloader.sh#L99-L102">bela_bootloader.sh</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> echo "log: dd if=/mnt/boot/MLO of=${DEVICE} seek=${dd_spl_uboot_seek} bs=${dd_spl_uboot_bs}"
+ dd if=/mnt/boot/MLO of=${DEVICE} seek=${dd_spl_uboot_seek} bs=${dd_spl_uboot_bs}
+ echo "log: dd if=/mnt/boot/u-boot.img of=${DEVICE} seek=${dd_uboot_seek} bs=${dd_uboot_bs}"
+ dd if=/mnt/boot/u-boot.img of=${DEVICE} seek=${dd_uboot_seek} bs=${dd_uboot_bs}
+</code></pre></div></div>
+
+<p>This should just call and depend on debian package bb-u-boot-am335x-evm</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> /opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk1.sh
+</code></pre></div></div>
+
+<h5 id="dhcp--etcdhcpdhcpdconf"><strong>DHCP  /etc/dhcp/dhcpd.conf</strong></h5>
+
+<p>Bela using dhcp to set usb0/usb1… <a href="https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/dhcpd.conf#L40-L46">https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/dhcpd.conf#L40-L46</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    subnet 192.168.7.0 netmask 255.255.255.0 {
+        range 192.168.7.1;
+    }
+
+    subnet 192.168.6.0 netmask 255.255.255.0 {
+</code></pre></div></div>
+
+<p>In Bullsye, the exact same setup is done through systemd-network.. with: bb-usb-gadget package <a href="https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network">https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network</a></p>
+
+<h5 id="bela-gadget"><strong>Bela Gadget</strong></h5>
+
+<p>This should be tweaked <a href="https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh">https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh</a> in an option in: <a href="https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget">https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget</a> as it auto loads the gadget driver.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [Unit]
+    Description=BeagleBoard.org USB gadgets
+    After=usb-gadget.target
+    ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
+</code></pre></div></div>
 
 <h3 id="writings"><strong>Writings</strong></h3>
 <p>I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented.</p>
