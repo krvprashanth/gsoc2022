@@ -1,4 +1,4 @@
-I"@V<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"º]<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoCâ€™2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -98,7 +98,7 @@
   <li>
     <p><strong>Finalize</strong>: Bela specific version:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo ./setup_sdcard.sh --img-4gb bela-image --dtb beaglebone --distro-bootloader --enable-load-bela-overlay
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo ./setup_sdcard.sh --img-4gb bela-image --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-load-bela-overlay
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -177,10 +177,45 @@
 <h3 id="omap-image-builder"><strong>omap-image-builder</strong></h3>
 
 <h5 id="bootloader-u-boot"><strong>Bootloader: U-Boot</strong></h5>
-<p>TODO</p>
+
+<p>Cape device tree overlays (src): <a href="https://github.com/beagleboard/bb.org-overlays/">https://github.com/beagleboard/bb.org-overlays/</a></p>
+
+<p>Debian package: bb-cape-overlays</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uboot_overlay_addr0=/lib/firmware/&lt;file0&gt;.dtbo
+uboot_overlay_addr1=/lib/firmware/&lt;file1&gt;.dtbo
+uboot_overlay_addr2=/lib/firmware/&lt;file2&gt;.dtbo
+uboot_overlay_addr3=/lib/firmware/&lt;file3&gt;.dtbo
+</code></pre></div></div>
+
+<p>If for some reason we need to disable the auto-loading of any of ^ those, use the option that matches addrX:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disable_uboot_overlay_addr0=1
+disable_uboot_overlay_addr1=1
+disable_uboot_overlay_addr2=1
+disable_uboot_overlay_addr3=1
+</code></pre></div></div>
+
+<p>4 more capes can be loaded via:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uboot_overlay_addr4=/lib/firmware/&lt;file4&gt;.dtbo
+uboot_overlay_addr5=/lib/firmware/&lt;file5&gt;.dtbo
+uboot_overlay_addr6=/lib/firmware/&lt;file6&gt;.dtbo
+uboot_overlay_addr7=/lib/firmware/&lt;file7&gt;.dtbo
+</code></pre></div></div>
+
+<p>Plus one custom cape:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dtb_overlay=/lib/firmware/&lt;file8&gt;.dtbo  
+</code></pre></div></div>
 
 <h5 id="u-boot-bootuenvtxt-configuration"><strong>U-Boot /boot/uEnv.txt configuration</strong></h5>
-<p>TODO</p>
+<p>/boot/uEnv.txt:</p>
+
+<p>In Bela Image build used this configuration to load-bela-overlay, Use Distro Bootloader, and Cape Universal Enable</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--distro-bootloader --enable-cape-universal --enable-load-bela-overlay 
+</code></pre></div></div>
 
 <h5 id="enable-and-load-custom-device-tree-overlay"><strong>Enable and Load Custom Device Tree Overlay</strong></h5>
 
@@ -275,7 +310,7 @@
 
 <p><a href="https://krvprashanth.in/gsoc2022/docs/documentation/how-to-guides/"><strong>How-To Guides</strong></a></p>
 
-<p><strong>Project Notes</strong></p>
+<p><a href="https://krvprashanth.in/gsoc2022/docs/documentation/project-notes/"><strong>Project Notes</strong></a></p>
 
 <p><a href="https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!"><strong>Weekly Meeting Minutes</strong></a></p>
 

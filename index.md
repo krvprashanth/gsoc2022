@@ -84,7 +84,7 @@ Archive will be under `./deploy/`
 
 - **Finalize**: Bela specific version:
 
-       sudo ./setup_sdcard.sh --img-4gb bela-image --dtb beaglebone --distro-bootloader --enable-load-bela-overlay
+       sudo ./setup_sdcard.sh --img-4gb bela-image --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-load-bela-overlay
     
 After the script finishes running, we will have an image file generated.
 
@@ -159,6 +159,12 @@ Plus one custom cape:
 
 ##### **U-Boot /boot/uEnv.txt configuration**
 /boot/uEnv.txt: 
+
+In Bela Image build used this configuration to load-bela-overlay, Use Distro Bootloader, and Cape Universal Enable
+
+    --distro-bootloader --enable-cape-universal --enable-load-bela-overlay 
+
+
 
 
 ##### **Enable and Load Custom Device Tree Overlay**
@@ -236,10 +242,10 @@ In Bullsye, the exact same setup is done through systemd-network.. with: bb-usb-
 ---
 This should be tweaked [https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh](https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh) in an option in: [https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget](https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget) as it auto loads the gadget driver.
 
-        [Unit]
-        Description=BeagleBoard.org USB gadgets
-        After=usb-gadget.target
-        ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
+    [Unit]
+    Description=BeagleBoard.org USB gadgets
+    After=usb-gadget.target
+    ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
 
 
 ### **Writings**
@@ -249,7 +255,7 @@ I maintained weekly log my progress throughout the program. For the most part it
 
  [**How-To Guides**](https://krvprashanth.in/gsoc2022/docs/documentation/how-to-guides/)
  
- **Project Notes**
+ [**Project Notes**](https://krvprashanth.in/gsoc2022/docs/documentation/project-notes/)
  
  [**Weekly Meeting Minutes**](https://git.beagleboard.org/gsoc/building-bela-images/-/wikis/Weekly-meeting-minutes-of-meet!)
   
