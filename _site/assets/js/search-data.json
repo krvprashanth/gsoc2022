@@ -59,258 +59,246 @@
     "url": "http://localhost:4000/docs/documentation/",
     "relUrl": "/docs/documentation/"
   },"10": {
-    "doc": "Blog",
-    "title": "Blog | Google Summer of Code 2022",
-    "content": "My Journey with Bela &amp; BeagleBoard . ",
-    "url": "http://localhost:4000/docs/blog/#blog--google-summer-of-code-2022",
-    "relUrl": "/docs/blog/#blog--google-summer-of-code-2022"
-  },"11": {
-    "doc": "Blog",
-    "title": "Blog",
-    "content": " ",
-    "url": "http://localhost:4000/docs/blog/",
-    "relUrl": "/docs/blog/"
-  },"12": {
     "doc": "Contact",
     "title": "Contacts",
     "content": ". Feel free to get in touch . | Email ID: krvprashanth@riseup.net | . | BeagleBoard Slack: @krvprashanth | . | Matrix: @krvprashanth:matrix.org | . | Telegram: https://t.me/krvprashanth | . ",
     "url": "http://localhost:4000/docs/contact/#contacts",
     "relUrl": "/docs/contact/#contacts"
-  },"13": {
+  },"11": {
     "doc": "Contact",
     "title": "Contact",
     "content": " ",
     "url": "http://localhost:4000/docs/contact/",
     "relUrl": "/docs/contact/"
-  },"14": {
+  },"12": {
     "doc": "Home",
     "title": "Building Bela Images",
     "content": " ",
     "url": "http://localhost:4000/#building-bela-images",
     "relUrl": "/#building-bela-images"
-  },"15": {
+  },"13": {
     "doc": "Home",
     "title": "GSoC’2022 | BeagleBoard.org",
     "content": ". The project idea was to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo. ",
     "url": "http://localhost:4000/#gsoc2022--beagleboardorg",
     "relUrl": "/#gsoc2022--beagleboardorg"
-  },"16": {
+  },"14": {
     "doc": "Home",
     "title": "About",
     "content": ". | Student Name: Kurva Prashanth | Mentors: Giulio Moro, Vedant Paranjape, Vaishnav Achath | GSoC Entry link: Program Project Page | Wiki: Building Bela Images | Blog Link: Building Bela Images | . ",
     "url": "http://localhost:4000/#about",
     "relUrl": "/#about"
-  },"17": {
+  },"15": {
     "doc": "Home",
     "title": "Table of Contents",
     "content": ". | Introduction . | Why Bela Image has been built again? | Project Preview | Brief Overview of Bela Image | . | Documentation . | Debian – Packages | omap-image-builder | Bela Software | Writings | . | Contributions . | Achieved Milestones | Git Repositories | Pull Requests | . | Further Implementation | Conclusion | Helpful Links | . ",
     "url": "http://localhost:4000/#table-of-contents",
     "relUrl": "/#table-of-contents"
-  },"18": {
+  },"16": {
     "doc": "Home",
     "title": "Introduction ",
     "content": "Bela is an open hardware and software platform for creating beautiful interaction with sensors, sound and it is designed for artists, musicians, researchers and makers, Bela brings the power of ultra-low latency interactive audio and sensors to digital systems. Bela Platform uses the Bela software which is a customised Debian distribution including a custom xenomai kernel, minimal clutter, and custom systemd configurations and It takes advantage of features of the BeagleBone computers and can achieve extremely fast audio and sensor processing times. Why Bela Image has been built again? . The Bela Image development repo is heavily based and which was initially inspired by Beagleboard Image-builder scripts. Currently, the Beagle board Image development repo diverged greatly from a common functionalities of building Images. And, there is an requirement to “rebase” the functionalities of the Bela Image builder repo to the Beagleboard Image builder one. As the two codebases are drastically different and need to rebuild the Bela Image and add the features of the Bela Image builder repo (xenomai kernel building scripts along with a bunch of Bela core) to Beagleboard Image builder repo. Now, after the specific changes the Bela Image development is following more closely with the Beagleboard Image development and as a result from now the Bela Image will be updated more often and it minimized further development effort. Project Preview . The main goal is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo. Note: This project isn’t rewrite omap-image-builder with bela changes, it’s merge bela changes into omap-image-builder. Bela Image builds with RobertCNelson/omap-image-builder scripts, These are the same build scripts that were used to generate the official BeagleBoard Images, found here: https://beagleboard.org/latest-images . Bela - Build-Script Instructions . These scripts are tested on Debian x86 machine. A typical workflow to build a Bela Image would look like: . | Download RobertCNelson/omap-image-builder . git clone https://github.com/RobertCNelson/omap-image-builder cd ./omap-image-builder . | Generate: Debian root file system . | . Debian Bullseye 11.5 ./RootStock-NG.sh -c bela.io-debian-bullseye-v4.14-ti-xenomai-armhf . Archive will be under ./deploy/ . | Finalize: Bela specific version: . sudo ./setup_sdcard.sh --img-4gb bela-image --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-load-bela-overlay . | . After the script finishes running, we will have an image file generated. Brief Overview of Bela Image . | Image uses Debian 11 (Bullseye) with the ti-linux-xenomai-bela-4.14.y and Xenomai v3.0.13 | Image have the default root user with no password. | On the first boot, the image will expand to fill the eMMC or SD card. | Root login over ssh is enabled. | The hostname is set to the name of board it’s for as Bela | Loads Bela IDE over browser, bela.local | Uses Robert Nelson’s Beaglebone image-builder scripts to build image. | . ",
     "url": "http://localhost:4000/#introduction-",
     "relUrl": "/#introduction-"
-  },"19": {
+  },"17": {
     "doc": "Home",
     "title": "Documentation ",
     "content": "Debian – Packages . Introductory notes . Debian package updated/packaged the dependencies of Bela and pushed to apt packager manager at https://rcn-ee.com that used in omap-image-builder along with mainline Debian apt package manager. Debian 11: (bullseye): http://repos.rcn-ee.com/debian/ . deb [arch=armhf] http://repos.rcn-ee.com/debian/ bullseye main #deb-src [arch=armhf] http://repos.rcn-ee.com/debian/ bullseye main . Package lists . These are the Bela required packages that are up in https://rcn-ee.com . | bela-customizations | Bela customizations | . | bela-seasocks | Simple, small, C++ embeddable webserver with WebSockets support | . | hvcc | hvcc compiler for Pure Data patches - python3 | . | libxenomai1-v3.0 | Shared libraries for Xenomai | . | libxenomai-v3.0-dev | Headers and static libraries for Xenomai | . | linux-image-4.14.108-ti-xenomai-bela-r2 | linux-image*deb | . | linux-headers-4.14.108-ti-xenomai-bela-r2 | linux-headers*deb | . | xenomai-v3.0-kernel-source | Sources of the Xenomai 2.x kernel | . | xenomai-v3.0-runtime | Xenomai runtime utilities | . omap-image-builder . Bootloader: U-Boot . Cape device tree overlays (src): https://github.com/beagleboard/bb.org-overlays/ . Debian package: bb-cape-overlays . uboot_overlay_addr0=/lib/firmware/&lt;file0&gt;.dtbo uboot_overlay_addr1=/lib/firmware/&lt;file1&gt;.dtbo uboot_overlay_addr2=/lib/firmware/&lt;file2&gt;.dtbo uboot_overlay_addr3=/lib/firmware/&lt;file3&gt;.dtbo . If for some reason we need to disable the auto-loading of any of ^ those, use the option that matches addrX: . disable_uboot_overlay_addr0=1 disable_uboot_overlay_addr1=1 disable_uboot_overlay_addr2=1 disable_uboot_overlay_addr3=1 . 4 more capes can be loaded via: . uboot_overlay_addr4=/lib/firmware/&lt;file4&gt;.dtbo uboot_overlay_addr5=/lib/firmware/&lt;file5&gt;.dtbo uboot_overlay_addr6=/lib/firmware/&lt;file6&gt;.dtbo uboot_overlay_addr7=/lib/firmware/&lt;file7&gt;.dtbo . Plus one custom cape: . dtb_overlay=/lib/firmware/&lt;file8&gt;.dtbo . U-Boot /boot/uEnv.txt configuration . /boot/uEnv.txt: . In Bela Image build used this configuration to load Bela Overlay, Use Distro Bootloader, and Cape Universal Enable . --distro-bootloader --enable-cape-universal --enable-load-bela-overlay . Enable and Load Custom Device Tree Overlay . In omap-image-builder/tools/setup_sdcard.sh . Just tweak it here: https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8c275dc665012efef06141400c5846/tools/setup_sdcard.sh#L1289 . ###Todo: make this more generic so you can specify any overlay... if [ \"x${load_custom_overlay}\" = \"xenable\" ] ; then echo \"###\" &gt;&gt; ${wfile} echo \"dtb_overlay=PB-HACKADAY-2021.dtbo\" &gt;&gt; ${wfile} echo \"\" &gt;&gt; ${wfile} fi . Load With: https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8c275dc665012efef06141400c5846/tools/setup_sdcard.sh#L2102 . --enable-load-custom-overlay) load_custom_overlay=\"enable\" ;; . Populating rootfs and Boot Partition . Boot Partition . Rootfs Partition . Bela Software . Bela Core . seasocks, am335x_pru_package, Bela IDE, prudebug, rtdm_pruss_irq, hvcc are installed through /target/chroot/bela.io-bullseye.sh script and custom xenomai kernel and all other Bela required packages are installed through /configs/bela.io-debian-bullseye-v4.14-ti-xenomai-armhf.conf . Bela Customizations . The bela-customizations debian package ships these (https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs) files as it is to bela image. Initialized a repo for bela-customizations and copied the /misc/rootfs of bela-image-builder repo in it and used this repo as source for packaging. Removed . | dhcp.conf cause bela-customizations package failed to install due to ‘/etc/dhcp/dhcpd.conf’, which is also in package isc-dhcp-server and better file, this has dhcp enabled…, that exact same setup is done thru systemd-network.. with: bb-usb-gadget package… https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network | securetty In Debian Bullseye, the runtime that use to use etc/securetty no longer uses that file.. it was completely removed as a legacy option.. Reference: https://www.debian.org/lts/security/2021/dla-2596 | fstab, hosts these files are generated when we run setup_sdcard.sh of omap-image-builder | interfaces systemd-network uses a new inteface.. | wpa_supplicant.conf will find it already pre-installed.. | . Changes that need to be done . Bela Bootloader . This still need to be converted… bela_bootloader.sh . echo \"log: dd if=/mnt/boot/MLO of=${DEVICE} seek=${dd_spl_uboot_seek} bs=${dd_spl_uboot_bs}\" dd if=/mnt/boot/MLO of=${DEVICE} seek=${dd_spl_uboot_seek} bs=${dd_spl_uboot_bs} echo \"log: dd if=/mnt/boot/u-boot.img of=${DEVICE} seek=${dd_uboot_seek} bs=${dd_uboot_bs}\" dd if=/mnt/boot/u-boot.img of=${DEVICE} seek=${dd_uboot_seek} bs=${dd_uboot_bs} . This should just call and depend on debian package bb-u-boot-am335x-evm . /opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk1.sh . DHCP /etc/dhcp/dhcpd.conf . Bela using dhcp to set usb0/usb1… https://github.com/rcn-ee/repos/blob/master/bela-customizations/suite/bullseye/debian/dhcpd.conf#L40-L46 . subnet 192.168.7.0 netmask 255.255.255.0 { range 192.168.7.1; } subnet 192.168.6.0 netmask 255.255.255.0 { . In Bullsye, the exact same setup is done through systemd-network.. with: bb-usb-gadget package https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/usb0-DHCP.network . Bela Gadget . This should be tweaked https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh in an option in: https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget as it auto loads the gadget driver. [Unit] Description=BeagleBoard.org USB gadgets After=usb-gadget.target ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets . Writings . I maintained weekly log my progress throughout the program. For the most part it has my work progress for the week and for the issue documented. Weekly Progress . How-To Guides . Project Notes . Weekly Meeting Minutes . ",
     "url": "http://localhost:4000/#documentation-",
     "relUrl": "/#documentation-"
-  },"20": {
+  },"18": {
     "doc": "Home",
     "title": "Contributions ",
     "content": "Achieved Milestones . | Debian package updated/packaged Bela dependencies | Packages are up in https://rcn-ee.com apt package manager and https://github.com/rcn-ee/repos | Built Bela Image with Beaglebone image-builder scripts | From now the Bela Image will be updated more often with BeagleBone Images Git Repositories . | . Common software that is on or used for building bela image. | rcn-ee/repos - Debian package configuration | RobertCNelson/omap-image-builder - Image builder | RobertCNelson/ti-linux-kernel-dev - ti-linux-xenomai-bela-4.14.y | Kurva Prashanth/bela-customizations - Source for bela-customizations debian package | . Pull Requests . In the following table, I present the pull requests (PRs) I created during the GSoC program. rcn-ee/repos . | PR | Status | . | Add seasocks, xenomai debian packages configuration [PR #60] | Closed | . | Add debian package configuration of bela customizations [PR #61] | Merged | . | Add debian package configuration of hvcc [PR #62] | Merged | . | Add xenomai (stable/v3.0.x) debian packages configuration [PR #63] | Closed | . | bela-customizations: cleanup and add bb-start-acm-ncm-rndis-old-gadget [PR #64] | Merged | . RobertCNelson/omap-image-builder . | PR | Status | . | Update packages list of Bela in configs [PR #199] | Closed | . | bela-bullseye-image-build [PR #200] | Merged | . | figured out what packages failed to install and made necessary changes [PR #201] | Merged | . | modify bela-bullseye chroot script [PR #202] | Merged | . | update to python3 version of hvcc compiler [PR #205] | Merged | . | bela boot [#208] | Merged | . | some more bela specific changes [#209] | Merged | . RobertCNelson/ti-linux-kernel-dev . | PR | Status | . | source to build the ti-linux-xenomai-4.14.y kernel debian package with bela configured config [PR #53] | Merged | . ",
     "url": "http://localhost:4000/#contributions-",
     "relUrl": "/#contributions-"
-  },"21": {
+  },"19": {
     "doc": "Home",
     "title": "Further Implementation",
-    "content": ". | Evaluate and Optimise boot times | Debian Package remaining Bela Core . | rtdm_pruss_irq | Bela IDE | prudebug | . | Improvise bela-customizations package. | . ",
+    "content": "There are a few things that I would like to implement after GSoC: . | Evaluate and Optimise boot times | Debian Package remaining Bela Core . | rtdm_pruss_irq | Bela IDE | prudebug | . | Improvise bela-customizations package. | . ",
     "url": "http://localhost:4000/#further-implementation",
     "relUrl": "/#further-implementation"
-  },"22": {
+  },"20": {
     "doc": "Home",
     "title": "Conclusion",
-    "content": "TODO . ",
+    "content": "The goals that were proposed have been completed to the best of my abilities except evaluating and optimizing boot times. currently the built image which shows that it can be build and work with BeagleBone Image builder scripts and I will be working on improving these things after suggestion in the upcoming weeks to make Bela Image into a more complete platform. I am thankful to Mentors, BeagleBoard and Bela for providing me this opportunity to work on this project during the summer, which helped me learn a lot. Before i was just using the new capabilities provided by the community, with this experience now i’m capable enough to contribute to the FOSS projects and moreover this experience sofar helped me to demystify technology and established that anyone can develop custom OS distibution. ",
     "url": "http://localhost:4000/#conclusion",
     "relUrl": "/#conclusion"
-  },"23": {
+  },"21": {
     "doc": "Home",
     "title": "Helpful Links",
     "content": ". | Original GSoC Project idea | https://github.com/BelaPlatform | https://bela.io | https://github.com/beagleboard/image-builder | https://github.com/BelaPlatform/bela-image-builder | . ",
     "url": "http://localhost:4000/#helpful-links",
     "relUrl": "/#helpful-links"
-  },"24": {
+  },"22": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "http://localhost:4000/",
     "relUrl": "/"
-  },"25": {
+  },"23": {
     "doc": "Project Notes",
     "title": "Table of Contents",
     "content": ". | Bela Image Build Process with BelaPlatform/bela-image-builder | Debian Packaging | Install xenomai v3.0.x on Bela with ti-linux-kernel 4.14.y | . ",
     "url": "http://localhost:4000/docs/documentation/project-notes/#table-of-contents",
     "relUrl": "/docs/documentation/project-notes/#table-of-contents"
-  },"26": {
+  },"24": {
     "doc": "Project Notes",
     "title": "Project Notes",
     "content": ". ",
     "url": "http://localhost:4000/docs/documentation/project-notes/",
     "relUrl": "/docs/documentation/project-notes/"
-  },"27": {
+  },"25": {
     "doc": "The Summary",
     "title": "The Summary",
     "content": ". ",
     "url": "http://localhost:4000/docs/documentation/the-summary/#the-summary",
     "relUrl": "/docs/documentation/the-summary/#the-summary"
-  },"28": {
+  },"26": {
     "doc": "The Summary",
     "title": "Git Repositories",
     "content": "Common software that is on or used for building bela image. | rcn-ee/repos - Debian package configuration | RobertCNelson/omap-image-builder - Image builder | RobertCNelson/ti-linux-kernel-dev - ti-linux-xenomai-bela-4.14.y | Kurva Prashanth/bela-customizations - Source for bela-customizations debian package | . ",
     "url": "http://localhost:4000/docs/documentation/the-summary/#git-repositories",
     "relUrl": "/docs/documentation/the-summary/#git-repositories"
-  },"29": {
+  },"27": {
     "doc": "The Summary",
     "title": "Pull Requests",
     "content": "In the following table, I present the pull requests (PRs) I created during the GSoC program. rcn-ee/repos . | PR | Status | . | Add seasocks, xenomai debian packages configuration [PR #60] | Closed | . | Add debian package configuration of bela customizations [PR #61] | Merged | . | Add debian package configuration of hvcc [PR #62] | Merged | . | Add xenomai (stable/v3.0.x) debian packages configuration [PR #63] | Closed | . | bela-customizations: cleanup and add bb-start-acm-ncm-rndis-old-gadget [PR #64] | Merged | . RobertCNelson/omap-image-builder . | PR | Status | . | Update packages list of Bela in configs [PR #199] | Closed | . | bela-bullseye-image-build [PR #200] | Merged | . | figured out what packages failed to install and made necessary changes [PR #201] | Merged | . | modify bela-bullseye chroot script [PR #202] | Merged | . | update to python3 version of hvcc compiler [PR #205] | Merged | . | bela boot [#208] | Merged | . | some more bela specific changes [#209] | Merged | . RobertCNelson/ti-linux-kernel-dev . | PR | Status | . | source to build the ti-linux-xenomai-4.14.y kernel debian package with bela configured config [PR #53] | Merged | . ",
     "url": "http://localhost:4000/docs/documentation/the-summary/#pull-requests",
     "relUrl": "/docs/documentation/the-summary/#pull-requests"
-  },"30": {
+  },"28": {
     "doc": "The Summary",
     "title": "The Summary",
     "content": ". ",
     "url": "http://localhost:4000/docs/documentation/the-summary/",
     "relUrl": "/docs/documentation/the-summary/"
-  },"31": {
+  },"29": {
     "doc": "Week 1",
     "title": "Week 1",
     "content": "June 13 - June 19 . | Bela Cape has shipped from London, 13 June. | Attended #1 weekly meet ( Monday, 13 June, 7:30 pm IST) with mentors Giulio Moro, Vedant Paranjape, and Vaishnav Achath regarding project progress and doubts and for minutes of meet check here | BeagleBone Black arrived today evening, 15 June. | Flashed Debian console Image via microSD card (without flashing the eMMC) | . | A video conference was held to Introduce ourselves and meet this year’s students! and Jason Kridner addressed on what Beagle cares about, contributing upstream, Asking smart questions, issue submissions on blockers, weekly status reports and growing connections within and beyong the BeagleBoard.org community. Here is a meeting recording click here - 15 June, 10pm IST. | Worked on to understand the workflows of both bela-image-builder and BeagleBoard Image builder repos by rebuilding bela, beagleboard Images and spent most hours on resolving build issues, and downloading code to my build machine. | Giulio Moro pushed a couple of updates to bela-image-builder that allowed to reproduce image with out any issues. | Went through the proposal to revise the workflow and made few changes. | This week I couldn’t progress much, spent most hours on resolving build errors and downloading source to my build machine (I had low bandwidth with shared Internet access) to reproduce Bela and BeagleBoard Images and I was not much clear about my project timeline, and struggled a bit to get started and things were not excepted as thought. Although now I have better roadmap to move forward in project. | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week1/#week-1",
     "relUrl": "/docs/weeklyprogress/week1/#week-1"
-  },"32": {
+  },"30": {
     "doc": "Week 1",
     "title": "Week 1",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week1/",
     "relUrl": "/docs/weeklyprogress/week1/"
-  },"33": {
+  },"31": {
     "doc": "Week 10",
     "title": "Week 10",
     "content": "August 15 - August 21 . | Attended GSoC Allyship and Inclusion Workshop for Contributors. | Worked on bela boot. | Built a bela-bullseye Image with all the changes made till date in omap-image-builder (upstream repo) | And, asked Giulio Moro and Dhruva Gole to test the bela-bullseye-image on board to get feedback and make changes upon it. | Bela Images - http://gfnd.rcn-ee.org:33044/workspace/bela-images/ | Added /etc/ssh/sshd_config.d/allow-unsecure.conf file in bela customizations | Enabled Bela systemctl services | Debugging the built image as boot partition is missing. | Started working on rtdm_pruss_irq. | . Accomplishments . | bela boot [PR #208] | Built bela-bullseye image and also flash and booted the Image | . Blockers . | Unable to install rtdm_pruss_irq need to understand clearly about the linux kernel headers that it required. | . Upcoming Targets . | Make a new debian package that provide all these deb files with the appropriate branch from this repo https://github.com/RobertCNelson/ti-linux-kernel-dev builds: . | linux-imagedeb | linuxheaders*deb | linuxfirmware*deb | . | . need both built the bela_defconfig from bela-image-builder . | Xenomai repo (which contains libcobalt and the rtdm headers) can be built as a Debian package: it contains a debian/ folder. TASK: build this as a package and make it available the usual way | Build a Bela Image with all these changes made in and after build test the Image and debug if it needs. | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week10/#week-10",
     "relUrl": "/docs/weeklyprogress/week10/#week-10"
-  },"34": {
+  },"32": {
     "doc": "Week 10",
     "title": "Week 10",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week10/",
     "relUrl": "/docs/weeklyprogress/week10/"
-  },"35": {
+  },"33": {
     "doc": "Week 11",
     "title": "Week 11",
     "content": "August 22 - August 28 . | Had weekly meeting with Giulio Moro, Dhruva Gole on Monday, 22 August, 4:30 pm CEST ( 8:00 IST ) and for minutes of meet check here | Started working on debian packaging ti-linux-xenomai-4.14.y kernel branch with bela configured config from https://github.com/RobertCNelson/ti-linux-kernel-dev builds | ti-linux-xenomai-bela-4.14.y branch was forked from ti-linux-xenomai-4.14.y to build the ti-linux-xenomai-4.14.y kernel debian package for bela images with bela’s config and initialized bela_deconfig from bela-image-builder/kernel and overwritten patches/deconfig. | . The build results in the following packages: . | linux-image-4.14.108-ti-xenomai-bela-r2 | linux-image*deb | . | linux-headers-4.14.108-ti-xenomai-bela-r2 | linux-headers*deb | . | Debian packaged Xenomai repo (which contains libcobalt and the rtdm headers) and also it contains a debian packages configuration and rebuilt it v3.0.13 and made it available the usual way as it was. | . The build results in the following packages: . | xenomai-v3.0-runtime | Xenomai runtime utilities | . | libxenomai1-v3.0 | Shared libraries for Xenomai | . | libxenomai-v3.0-dev | Headers and static libraries for Xenomai | . | xenomai-v3.0-kernel-source | Sources of the Xenomai 2.x kernel | . target/chroot/bela.io-bullseye.sh . | Added bela install script along with install required deb packages and also change source installation path to /root | Installed seasocks, am335x_pru_package before building bela so the later does not fail | Cleaned up checkinstall and also xenomai installation script in chroot in order to install with deb packages | . configs/bela.io-debian-bullseye-v4.14-ti-xenomai-armhf.conf . | Added clang,tree, xenomai-v3.0.13 (libxenomai-v3.0-dev, xenomai-v3.0-kernel-source, xenomai-v3.0-runtime, libxenomai1-v3.0) and removed libstdc++6-10-dbg,clang-3.9 | Updated naming and description to bela specific | . Built a Bela Image with all these changes made and also flash and booted the Image on board. Accomplishments . | source to build the ti-linux-xenomai-4.14.y kernel debian package with bela configured config [PR #53] | Add xenomai (stable/v3.0.x) debian packages configuration PR #63 | some more bela specific changes [PR #209] | Built a Bela Image with all these changes made and also flash and booted the Image on board. | . Blockers . | Unable to install rtdm_pruss_irq | . Upcoming Targets . | Work on rtdm_pruss_irq installation and demo running sinetone example | Create detailed Documentation about the changes made in Bela Image development process and also a guide about contributing to Bela Image development and how to make use of code base. | Write the overall project summary and outcomes. | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week11/#week-11",
     "relUrl": "/docs/weeklyprogress/week11/#week-11"
-  },"36": {
+  },"34": {
     "doc": "Week 11",
     "title": "Week 11",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week11/",
     "relUrl": "/docs/weeklyprogress/week11/"
-  },"37": {
+  },"35": {
     "doc": "Week 12",
     "title": "Week 12",
     "content": "August 29 - September 4 . | Had weekly meeting with Giulio Moro, Dhruva Gole on Monday, 29 August, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet check here | Worked on rtdm_pruss_irq installation and demo running sinetone example | Built bela-bullseye image again to make it sinetone example work.. | . Accomplishments . | bela-customizations [PR #64] | Bela overlays loading properly and the sinetone example running out of the box and loading the Bela IDE in browser. | . Blockers . | No Blockers Upcoming Targets . | Create the root user, delete the debian user and allow to login via ssh as root. | Get dual partitioning for the Bela image (Bela Boot, rootfs) | Add bela-specific changes to the usb gadget in bela-customizations package. | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week12/#week-12",
     "relUrl": "/docs/weeklyprogress/week12/#week-12"
-  },"38": {
+  },"36": {
     "doc": "Week 12",
     "title": "Week 12",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week12/",
     "relUrl": "/docs/weeklyprogress/week12/"
-  },"39": {
+  },"37": {
     "doc": "Week 2",
     "title": "Week 2",
     "content": "June 20 - June 26 . | Received Bela Cape Shipment, 20 June. | Attended #2 weekly meeting with mentors, Monday, 20 June, 4pm CEST ( 7:30 IST ) and for minutes of meet check here | Started learning how to create debian package and understand the workflow (which I had started earlier and have some knowledge about) and setuped Debian packaging development environment. | I worked on packaging Bela and Xenomai. At first, I have not been able to work on makefiles. | As these software source code have makefiles to use and build the Binaries, and looked for are there any tool that can decrease the hustle of these makefiles to build the binaries easily, so till that time, the work is on pause. | Parallely, gone through the tutorials of makefiles and with a little understanding and started working on these packages. | Packaged xenomai-v3.0.12, xenomai package is either very new and hasn’t on debian mirrors yet and it’s old package eventually got removed. | Rest this week I learned a lot about Debian packaging, makefiles, though this week was slow on the work phase but I learned a lot during this week. | . Blockers . | https://git.beagleboard.org/gsoc/building-bela-images/-/issues/1 | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week2/#week-2",
     "relUrl": "/docs/weeklyprogress/week2/#week-2"
-  },"40": {
+  },"38": {
     "doc": "Week 2",
     "title": "Week 2",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week2/",
     "relUrl": "/docs/weeklyprogress/week2/"
-  },"41": {
+  },"39": {
     "doc": "Week 3 & 4",
     "title": "Week 3 &amp; 4",
     "content": "June 27 - July 10 . | Final Exams - No Code | These two weeks I had my semester exams, most of the work is scheduled in the second half of the coding period. I couldn’t work during the exams. I planned to compensate for this by putting extra hours in the remaining period. | . Accomplishments . | Introductory Video of the Project | . Blockers . | No Blockers | . Upcoming Targets . | At least three packages updated/packaged. Bela, bb.org-overlays, ti-linux-kernel-4.14-r143 . | Setting up CI/CD for Debian packaging in git repos of Bela sources. | After packaging push packaged sources to https://rcn-ee.com apt package manager and GitHub - rcn-ee/repos: repos.rcn-ee.com | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week3-4/#week-3--4",
     "relUrl": "/docs/weeklyprogress/week3-4/#week-3--4"
-  },"42": {
+  },"40": {
     "doc": "Week 3 & 4",
     "title": "Week 3 & 4",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week3-4/",
     "relUrl": "/docs/weeklyprogress/week3-4/"
-  },"43": {
+  },"41": {
     "doc": "Week 5",
     "title": "Week 5",
     "content": "July 11 - July 17 . Accomplishments . | Packaged seasocks v1.4.4 | Built bela-stretch Image with omap-image-builder scripts | . Blockers . | Unable to boot the built bela-stretch Image | Not able to Install bela base packages with debootstrap by using omap-Imap-builder scripts. | . Upcoming Targets . | Build latest bela-bullseye Image with omap-image-builder . | flash and boot the image | copy on the board the Bela repo cd into it and do ‘makelib’ | enable the BB-BELA-00A0.dtbo device tree overlay | create a root user, make it the default user, with no password and also delete the debian user that would be there as default | make EXAMPLE=Fundamentals/sinetone in the Bela folder and it should work | . | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week5/#week-5",
     "relUrl": "/docs/weeklyprogress/week5/#week-5"
-  },"44": {
+  },"42": {
     "doc": "Week 5",
     "title": "Week 5",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week5/",
     "relUrl": "/docs/weeklyprogress/week5/"
-  },"45": {
+  },"43": {
     "doc": "Week 6",
     "title": "Week 6",
     "content": "July 18 - July 24 . | Placed order for USB to TTL Serial Cable - UART connection to debug boot process. | Had weekly meeting with Giulio Moro on Monday, 20 June, 4:30 pm CEST ( 8:00 IST ) and for minutes of meet check here | Flash and booted the bela-stretch image which built in lask week and couldn’t test the image with examlpe sintone working and as per mentor suggestion started building latest bullseye image for bela. | Initially, when i tried with the all Bela required packages that were in packages.txt of bela-image-builder and the build getting failed at the point resolving packages and none of the packages weren’t able to install via debootstrap. Tried with including bela-image-builder parameters for debootstrap in omap-image-builder scripts though it showed same error. | Much time was spent on debootstrap trying to figure where it’s coming from and it fixed with Robert Nelson help. | Solution: There’s a sed script that reads *.conf file, it’s currently only knows about &lt;tabs&gt; but yeah, it was always tabs and it’s more about more than one space sed 's/ /,/g' | bela.io-debian-bullseye-v4.14-ti-xenomai-armhf build completes all the way and ready for boot testing and figured out what packages broke and then moved that packages under “deb_addition_pkgs” in bela-bullseye conf file. | Studied about Debian Live Manual/Customizing Contents | Experimented on different ideas that which is suitable method for cross-compiling xenomai-3 for Bela with omap-image-builder including in /target/chroot script or chroot_before_hook in /configs bela-bullseye file. | Updated the target/chroot script (bela.io-bullseye.sh) with installation scripts to repos that bela ships and removed the ones that were not required for bela. | And, also spent some time on understanding Jenkins build systems as every git commit of omap-image-builder get’s built and a full log is available, So it’s quick to see if something broke and it just as a validate/helper. | bela-bullseye Image build logs can be seen here | . Accomplishments . | Built bela-bullseye Image with omap-image-builder scripts . | Added package list of what currently bela ships [PR #199] | bela-bullseye-image-build [PR #200] | Figured out what packages failed to install via debootstrap and made necessary changes [PR #201] | Modified bela-bullseye chroot script [PR #202] | Quick-wiki: Present workflow to build a Bela Image would look like | . | Tested the built bela-bullseye Image . | Flash and booted the Image | Installed Xenomai Kernel and Libraries, am335x PRU package, seasocks | . | . Blockers . | No Blockers | . Upcoming Targets . | Add these files to Bela Image build scripts in omap-image-builder . | bela-image-builder/misc/rootfs/lib/systemd/system | bela-image-builder/misc/rootfs/opt/Bela | more in general all the files that are in bela-image-builder/misc/rootfs have a reason to be there. | . | And also those in . | /lib/system : copy them over and enable bela_button, bela_ide (systemctl enable bela_button bela_ide) | /opt/Bela: copy them over | /root : copy them over | /etc: need to be checked one by one to see what special settings have been applied | . | bela_gadget files . | check what differences there are with the omap-image-builder version (They have a service called bb-usb-gadgets.service . See what that does and what file it uses) | see whether it can “inject” some of these changes in the upstream version or whether we should be maintaining a “forked” version | . | /lib/systemd/system/bela_flash_emmc.service and /opt/Bela/bela_flash_emmc.sh has similar problems. | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week6/#week-6",
     "relUrl": "/docs/weeklyprogress/week6/#week-6"
-  },"46": {
+  },"44": {
     "doc": "Week 6",
     "title": "Week 6",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week6/",
     "relUrl": "/docs/weeklyprogress/week6/"
-  },"47": {
+  },"45": {
     "doc": "Week 7",
     "title": "Week 7",
     "content": "July 25 - July 31 . | Had weekly meeting with Giulio Moro on Monday, 25 July, 4:00 pm CEST ( 7:30 pm IST ) and for minutes of meet check here | Currently, bela-image-builder ships hvcc (heavy hvcc compiler) that has python2 dependencies of pip2, enum, jinja2 and Debian 11 (bullseye) has removed the “ python package and the /usr/bin/python symlink due to the deprecation of Python 2.. though it has minimal support for python 2.7 adjusted everything for python3-&lt;package name&gt; ( updated python3 version of hvcc and added dependency package tox in bela-bullseye conf ) and also removed enum package that no more it required. | Looked at how bela-gadget is different with compared to bb-usb-gadget (what that does and what file it uses) and whether it can be ‘inject’ some of bela changes init. | bb-usb-gadget, takes over anything to do with usb gadget loading.. and it has a systemd script which didn’t exist in prior then bullseye (https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-usb-gadgets.bb-usb-gadgets.service) | Started working on to create a bela-customizations debian package. | Initialized a repo for bela-customizations and copied the /misc/rootfs of bela-image-builder repo ( https://github.com/BelaPlatform/bela-image-builder/tree/master/misc/rootfs ) into it and used this repo as source for debian packaging. | Studied about systemd System and Service Manager and Lennart Poettering’s blog which has lots of information about systemd | Debian packaged bela customizations. | Used this dh_installsystemd to package the bela systemd files. | While packaging systemd files learnt a lot about systemd and service manager spent some good time on this and systemd files are fun to deal with.. bela had a tone of them!!!! :) | . Accomplishments . | update to python3 version of hvcc compiler [PR #205] | Add debian package configuration of bela customizations [PR #61] | . Blockers . | No Blockers | . Upcoming Targets . | Debian package updated/packaged. | hvcc | prudebug | . | . 2 package/week (taking a comfortable room, if some package needs more work). | Build a bela-bullseye Image with all the changes made in upstream repo (omap-image-builder) by Aug 5 and after build test the Image and debug if it needs. | Make some more Bela specific changes in omap-image-builder scripts and also to make sure Bela Image Development follows the workflow of omap-image builder build process. | bela_gadget files | systemd configuration | Installing Bela, bela kernel, Building kernel module (rtdm_pruss_irq), Setting-up clang | boot/drivers (BELABOOT) | . | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week7/#week-7",
     "relUrl": "/docs/weeklyprogress/week7/#week-7"
-  },"48": {
+  },"46": {
     "doc": "Week 7",
     "title": "Week 7",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week7/",
     "relUrl": "/docs/weeklyprogress/week7/"
-  },"49": {
+  },"47": {
     "doc": "Week 8",
     "title": "Week 8",
     "content": "August 1 - August 7 . | Had weekly meeting with Giulio Moro on Monday, 1 August, 4 pm CEST ( 7:30 pm IST ) and for minutes of meet check here | Started working debian packaging of heavy hvcc compiler. | Used dh-virtualenv to package the heavy hvcc compiler source. | Debian packaged hvcc. | . Accomplishments . | Add debian package of hvcc [PR #62] | . Blockers . | No Blockers | . Upcoming Targets . | Work on last week pending targets | Debian package updated/packaged. | prudebug | . | Build a bela-bullseye Image with all the changes made in upstream repo (omap-image-builder) by Aug 5 and after build test the Image and debug if it needs. | Make some more Bela specific changes in omap-image-builder scripts and also to make sure Bela Image Development follows the workflow of omap-image builder build process. | bela_gadget files | systemd configuration | Installing Bela, bela kernel, Building kernel module (rtdm_pruss_irq), Setting-up clang | boot/drivers (BELABOOT) | . | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week8/#week-8",
     "relUrl": "/docs/weeklyprogress/week8/#week-8"
-  },"50": {
+  },"48": {
     "doc": "Week 8",
     "title": "Week 8",
     "content": ". ",
     "url": "http://localhost:4000/docs/weeklyprogress/week8/",
     "relUrl": "/docs/weeklyprogress/week8/"
-  },"51": {
+  },"49": {
     "doc": "Week 9",
     "title": "Week 9",
     "content": "August 8 - August 14 . | Had weekly meeting with Giulio Moro on Monday, 8 August, 4 pm CEST ( 7:30 pm IST ) and updated last week progress. | Build a bela-bullseye Image with all the changes made in upstream repo (omap-image-builder) | Started working bela boot. | . Accomplishments . | No Accomplishments, this week i was not feeling well had to take rest. | . Blockers . | No Blockers | . Upcoming Targets . | Work on last week pending targets | Debian package updated/packaged. | prudebug -rtdm_pruss_irq | . | Make some more Bela specific changes in omap-image-builder scripts and also to make sure Bela Image Development follows the workflow of omap-image builder build process. | bela_gadget files | systemd configuration | Installing Bela, bela kernel, Building kernel module (rtdm_pruss_irq), Setting-up clang | . | . ",
     "url": "http://localhost:4000/docs/weeklyprogress/week9/#week-9",
     "relUrl": "/docs/weeklyprogress/week9/#week-9"
-  },"52": {
+  },"50": {
     "doc": "Week 9",
     "title": "Week 9",
     "content": ". ",

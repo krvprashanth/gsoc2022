@@ -314,6 +314,7 @@ In the following table, I present the pull requests (PRs) I created during the G
 
 ---
 ## **Further Implementation** 
+There are a few things that I would like to implement after GSoC:
 - Evaluate and Optimise boot times
 - Debian Package remaining Bela Core
     - rtdm_pruss_irq
@@ -323,7 +324,9 @@ In the following table, I present the pull requests (PRs) I created during the G
 
 ---
 ## **Conclusion**
-TODO
+The goals that were proposed have been completed to the best of my abilities except evaluating and optimizing boot times. currently the built image which shows that it can be build and work with BeagleBone Image builder scripts and I will be working on improving these things after suggestion in the upcoming weeks to make Bela Image into a more complete platform.
+
+I am thankful to Mentors, BeagleBoard and Bela for providing me this opportunity to work on this project during the summer, which helped me learn a lot. Before i was just using the new capabilities provided by the community, with this experience now i'm capable enough to contribute to the FOSS projects and moreover this experience sofar helped me to demystify technology and established that anyone can develop custom OS distibution.
 
 ---
 

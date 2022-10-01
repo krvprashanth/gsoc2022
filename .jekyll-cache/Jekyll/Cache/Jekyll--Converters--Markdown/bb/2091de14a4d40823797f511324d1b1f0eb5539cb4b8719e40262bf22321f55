@@ -1,4 +1,4 @@
-I"Œb<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"ûe<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoCâ€™2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -433,6 +433,7 @@ ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
 
 <hr />
 <h2 id="further-implementation"><strong>Further Implementation</strong></h2>
+<p>There are a few things that I would like to implement after GSoC:</p>
 <ul>
   <li>Evaluate and Optimise boot times</li>
   <li>Debian Package remaining Bela Core
@@ -447,7 +448,9 @@ ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
 
 <hr />
 <h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>TODO</p>
+<p>The goals that were proposed have been completed to the best of my abilities except evaluating and optimizing boot times. currently the built image which shows that it can be build and work with BeagleBone Image builder scripts and I will be working on improving these things after suggestion in the upcoming weeks to make Bela Image into a more complete platform.</p>
+
+<p>I am thankful to Mentors, BeagleBoard and Bela for providing me this opportunity to work on this project during the summer, which helped me learn a lot. Before i was just using the new capabilities provided by the community, with this experience now iâ€™m capable enough to contribute to the FOSS projects and moreover this experience sofar helped me to demystify technology and established that anyone can develop custom OS distibution.</p>
 
 <hr />
 
