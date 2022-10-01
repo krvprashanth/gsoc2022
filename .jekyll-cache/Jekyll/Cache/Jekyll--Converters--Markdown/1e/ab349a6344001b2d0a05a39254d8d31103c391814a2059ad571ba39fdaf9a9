@@ -1,4 +1,4 @@
-I"¢]<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
+I"c`<h1 id="building-bela-images"><strong>Building Bela Images</strong></h1>
 <h2 id="gsoc2022--beagleboardorg"><strong><a href="https://summerofcode.withgoogle.com/programs/2022/organizations/beagleboardorg">GSoCâ€™2022 | BeagleBoard.org</a></strong></h2>
 
 <hr />
@@ -98,7 +98,7 @@
   <li>
     <p><strong>Finalize</strong>: Bela specific version:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo ./setup_sdcard.sh --img-4gb bela-image --dtb beaglebone --distro-bootloader --enable-load-bela-overlay
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo ./setup_sdcard.sh --img-4gb bela-image --dtb beaglebone --distro-bootloader --enable-cape-universal --enable-load-bela-overlay
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -212,7 +212,7 @@ uboot_overlay_addr7=/lib/firmware/&lt;file7&gt;.dtbo
 <h5 id="u-boot-bootuenvtxt-configuration"><strong>U-Boot /boot/uEnv.txt configuration</strong></h5>
 <p>/boot/uEnv.txt:</p>
 
-<p>In Bela Image build used this configuration to load-bela-overlay, Use Distro Bootloader, and Cape Universal Enable</p>
+<p>In Bela Image build used this configuration to <a href="https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L1296">load Bela Overlay</a>, <a href="https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L524">Use Distro Bootloader</a>, and <a href="https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L1271">Cape Universal Enable</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--distro-bootloader --enable-cape-universal --enable-load-bela-overlay 
 </code></pre></div></div>
@@ -239,8 +239,8 @@ uboot_overlay_addr7=/lib/firmware/&lt;file7&gt;.dtbo
 </code></pre></div></div>
 
 <h5 id="populating-rootfs-and-boot-partition"><strong>Populating rootfs and Boot Partition</strong></h5>
-<h6 id="boot-partition"><strong>Boot Partition</strong></h6>
-<h6 id="rootfs-partition"><strong>Rootfs Partition</strong></h6>
+<h6 id="boot-partition"><a href="https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L808"><strong>Boot Partition</strong></a></h6>
+<h6 id="rootfs-partition"><a href="https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L923"><strong>Rootfs Partition</strong></a></h6>
 
 <h3 id="bela-software"><strong>Bela Software</strong></h3>
 
@@ -297,10 +297,10 @@ uboot_overlay_addr7=/lib/firmware/&lt;file7&gt;.dtbo
 <hr />
 <p>This should be tweaked <a href="https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh">https://github.com/BelaPlatform/bela-image-builder/blob/master/misc/rootfs/opt/Bela/bela_gadget.sh</a> in an option in: <a href="https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget">https://github.com/rcn-ee/repos/blob/master/bb-usb-gadgets/suite/bullseye/debian/bb-start-acm-ncm-rndis-old-gadget</a> as it auto loads the gadget driver.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [Unit]
-    Description=BeagleBoard.org USB gadgets
-    After=usb-gadget.target
-    ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=BeagleBoard.org USB gadgets
+After=usb-gadget.target
+ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
 </code></pre></div></div>
 
 <h3 id="writings"><strong>Writings</strong></h3>

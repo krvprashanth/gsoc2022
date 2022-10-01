@@ -160,7 +160,7 @@ Plus one custom cape:
 ##### **U-Boot /boot/uEnv.txt configuration**
 /boot/uEnv.txt: 
 
-In Bela Image build used this configuration to load-bela-overlay, Use Distro Bootloader, and Cape Universal Enable
+In Bela Image build used this configuration to [load Bela Overlay](https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L1296), [Use Distro Bootloader](https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L524), and [Cape Universal Enable](https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L1271)
 
     --distro-bootloader --enable-cape-universal --enable-load-bela-overlay 
 
@@ -187,8 +187,8 @@ Load With: [https://github.com/RobertCNelson/omap-image-builder/blob/f9b6785eca8
 		;;
 
 ##### **Populating rootfs and Boot Partition**
-###### **Boot Partition**
-###### **Rootfs Partition**
+###### [**Boot Partition**](https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L808)
+###### [**Rootfs Partition**](https://github.com/RobertCNelson/omap-image-builder/blob/f5257ee96abdb30d5716cd85147877cfd06f76e8/tools/setup_sdcard.sh#L923)
 
 ### **Bela Software**
 
